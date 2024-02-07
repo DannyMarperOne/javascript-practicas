@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    function ejecutar() {
+        let saldo = 1000;
+        while (true) {
+            let opcion = prompt("¿Qué desea realizar? \n1. Consignar, \n2. Retirar, \n3. Salir");
+
+            if (opcion === "3") {
+                alert("Hasta luego.");
+                break;
+            }
+
+            if (opcion === "1") {
+                let valor = parseInt(prompt("Digíte el valor a consignar:"));
+                saldo += valor;
+                alert("Acción realizada correctamente. Su saldo actual es de: " + saldo + " dolares");
+            } else if (opcion === "2") {
+                let valor = parseInt(prompt("¿Cuánto desea retirar?:"));
+                if (valor > saldo) {
+                    alert("No se puede llevar acabo esta operación. Saldo actual: " + saldo + " dolares");
+                } else {
+                    saldo -= valor;
+                    alert("Acción realizada correctamente. Su saldo actual es de: " + saldo + " dolares");
+                }
+            } else {
+                alert("Opción invalida");
+            }
+        }
+    }
+</script>
+
+</html>

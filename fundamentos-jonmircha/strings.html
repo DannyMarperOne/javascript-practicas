@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nombre = "Daniel";
+        let apellido = "Martinez";
+        // Concatenación
+        let saludo = "Hola mucho gusto " + nombre + " " + apellido + ".";
+        console.log(saludo);
+
+        // Intepolación de variables
+        // Templates Strings
+        let saludo2 = `Hola al nuevo amigo ${nombre} ${apellido}.`;
+        console.log(saludo2);
+
+
+        // Error al usar comillas dobles con html, para usar comillas dobles con html, el html hay que utilizarlo en una sola linea para que no marque errores
+        let ul = " <ul><li>Primavero</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>"
+        console.log(ul);
+
+
+        // Para evitar este problema y que sea mas legible, es mejor utiilizar las comillas invertidas o template string
+        let ul2 = `
+        <ul>
+            <li>Primavero</li>
+            <li>Verano</li>
+            <li>Otoño</li>
+            <li>Invierno</li>
+        </ul>`
+        console.log(ul2);
+    </script>
+    <ul>
+        <li>Primavero</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ul>
+</body>
+
+</html>
