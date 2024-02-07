@@ -1,0 +1,16 @@
+<!-- Cambio de unidades. en este ejercicio debes convertir a segundos una medida de tiempo dada en horas y minutos.
+
+Recuerda una hora son 6o minutos y cada minuto son 60 segundos -->
+
+<html>
+<script>
+    let hora = parseFloat(prompt("Dime una hora:"));
+    let minuto = parseFloat(prompt("Dime los minutos:"))
+
+    let horaconvert = hora * 60 * 60;
+    let minutoconvert = minuto * 60
+    let segundos = horaconvert + minutoconvert;
+    alert("El tiempo en segundos es " + segundos);
+</script>
+
+</html>
