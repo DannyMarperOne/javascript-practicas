@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let user = prompt("Ingresa tu nombre de usuario");
+        let password = "TheMaster";
+
+        if (user == "Admin") {
+            let pass = prompt("¿Cúal es tu contraseña?", "");
+            if (pass === password && user === "Admin") {
+                alert('Bienvenido!');
+            } else if (pass === "" || pass === null) {
+                alert("Cancelar");
+            } else {
+                alert("Contraseña Incorrecta");
+            }
+        } else if (user === "" || user === null) {
+            alert("Cancelar");
+        } else {
+            alert("No te conozco");
+        }
+    </script>
+</body>
+
+</html>
