@@ -8,3 +8,4 @@ while (edad < 18) {
     edad++
 }
 console.log("Ya eres un adulto");
+
