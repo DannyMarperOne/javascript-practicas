@@ -13,11 +13,17 @@ const marper = {
     },
     saludar: function () {
         console.log("Hola")
+    },
+    decirMiNombre: function () {
+        console.log(`Hola mi nombre es ${this.nombre} ${this.apellido} y tengo ${this.edad} años de edad`);
     }
 }
 
 console.log(marper);
 
+// Acceder a los valores espcificos de los objetos
+/* La notación con corchetes ya no es muy utilizada, acutalmente se 
+utiliza el . como se ve en las siguientes lineas*/
 console.log(marper["nombre"]);
 console.log(marper["edad"]);
 console.log(marper.soltero);
@@ -25,3 +31,9 @@ console.log(marper.soltero);
 console.log(marper.pasatiempos[1]);
 console.log(marper.contacto.email);
 marper.saludar();
+marper.decirMiNombre();
+
+
+// Metodos de los objetos
+console.log(Object.keys(marper));
+console.log(Object.values(marper));
