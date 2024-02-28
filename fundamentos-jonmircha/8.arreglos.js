@@ -1,4 +1,4 @@
-// DECLARACION DE VARIABLES
+// DECLARACION DE ARREGLOS
 
 // lo más normal es declarar los arreglos con una constante
 
