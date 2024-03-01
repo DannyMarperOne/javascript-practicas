@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let firstFriend = prompt("Ingresa el dinero del primer amigo");
+        let secondFriend = prompt("Ingresa el dinero del segundo amigo");
+        let thirdFriend = prompt("Ingresa el dinero del tercer amigo");
+
+        let total = (+firstFriend + +secondFriend + +thirdFriend) / 3;
+        debtFirst = total - firstFriend;
+        debtSecond = total - secondFriend;
+        debtThird = total - thirdFriend;
+        alert(`El primer amigo debe ${debtFirst}, el segundo amigo debe ${debtSecond} y el tercero debe ${debtThird}`);
+    </script>
+</body>
+
+</html>
