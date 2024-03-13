@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = 0;
+        let n2 = 0;
+        let n3 = 0;
+        let cifra = 0;
+
+        cifra = prompt('Ingresa un número de tres cifras para invertir el número');
+        n = Math.trunc(cifra % 10);
+        n3 = Math.trunc(cifra / 100);
+        n2 = Math.trunc(cifra / 10) - n3 * 10;
+        alert(n);
+        alert(n3);
+        alert(n2);
+        alert(`${n}${n2}${n3}`);
+    </script>
+</body>
+
+</html>
