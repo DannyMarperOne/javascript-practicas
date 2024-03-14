@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // CLICOS
+
+        // Ciclo While
+        //Siempre compara antes de realizar lo que está entré corchetes
+        let contador = 0;
+
+        while (contador < 10) {
+            console.log("While " + contador);
+            contador++;
+        }
+
+        // Ciclo Do While
+        //Siempre hace primero lo que está dentro de los corchetes y despues hace la comparación
+        do {
+            console.log("Do While " + contador);
+            contador++;
+        } while (contador < 10)
+
+        // Ciclo For
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+        for (let i = 0; i < numeros.length; i++) {
+            console.log(numeros[i]);
+        }
+
+        // For in & For of
+
+        const person = {
+            nombre: "Danny",
+            apellido: "Marper",
+            edad: 27
+        }
+        // For in: variante de for y permite recorrer e iterar los atributos o propiedades que tenga un objeto 
+        for (const propiedad in person) {
+            console.log(`Key: ${propiedad}, Value: ${person[propiedad]}`);
+        }
+
+        // For of
+        // Permite recorrer todos los elementos de cualquier objeto que sea iterable en javascript como los Arreglos o Cadenas de texto ya que se pueden partir en varias partes.
+        for (const elemento of numeros) {
+            console.log(elemento);
+        }
+
+        let saludo = "Hola Mundo";
+        for (const caracter of saludo) {
+            console.log(caracter);
+        }
+    </script>
+</body>
+
+</html>
