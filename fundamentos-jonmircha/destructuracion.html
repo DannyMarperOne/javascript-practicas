@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        // Sin utilizar la destructuración, le asignamos una variable a cada uno de los valores del arreglo
-        let numeros = [1, 2, 3];
-        let uno = numeros[0];
-        let dos = numeros[1];
-        let tres = numeros[2];
-        console.log(uno, dos, tres);
+      // Sin utilizar la destructuración, le asignamos una variable a cada uno de los valores del arreglo
+      let numeros = [1, 2, 3];
+      let uno = numeros[0];
+      let dos = numeros[1];
+      let tres = numeros[2];
+      console.log(uno, dos, tres);
 
-        // Con Destructuración
-        // Destructuración de un arreglo
-        const [one, two, three] = numeros;
-        console.log(one, two, three)
+      // Con Destructuración
+      // Destructuración de un arreglo
+      const [one, two, three] = numeros;
+      console.log(one, two, three);
 
-
-        // Destructuración de un Objeto
-        const persona = {
-            nombre: "Daniel",
-            apellido: "Martinez",
-            edad: 27
-        }
-        let (nombre, apellido, edad) = persona;
-        console.log(nombre, apellido, edad);
-        // Para que la destructuración funcione en los objetos, es muy importante que la variable que trato de crear, se llame igual que la propiedad que pretendo aislar en una sola variable
+      // Destructuración de un Objeto
+      const persona = {
+        nombre: "Daniel",
+        apellido: "Martinez",
+        edad: 27,
+      };
+      let { nombre, apellido, edad } = persona;
+      console.log(nombre, apellido, edad);
+      // Para que la destructuración funcione en los objetos, es muy importante que la variable que trato de crear, se llame igual que la propiedad que pretendo aislar en una sola variable
+      // No pasa nada si cambiamos el orden de las de las variable ya que justamente identifica a la propiedad cuando sea similar la variable independiente. Deben ser iguales pero no importa el orden en el que se coloquen las variables
     </script>
-</body>
-
+  </body>
 </html>
