@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Manejo de Errores
+
+        // En el momento en el que el bloque try detecta un error, en ese momento detiene la ejecución del código y entra el catch como respuesta
+        // El bloque finally realmente no se usa pero es bueno sabe que existe.
+
+        try {
+            console.log("En el try se agrega el código a evaluar");
+            noExiste;
+            console.log("Segundo mensaje en el try");
+        } catch (error) {
+            console.log("Catch, captura cualquier error surgido o lanzado en el try");
+        } finally {
+            console.log("El bloque finally se ejecutará siempre al final de un bloque try-catch")
+        }
+
+        // Personalizar tus propios mensaje de error.
+        try {
+            let numero = "1d0";
+            if (isNaN(numero)) {
+                throw new Error("El caracter introducido no es un número")
+            }
+            console.log(numero * numero);
+        } catch (error) {
+            console.log(`Se produjo el siguiente error: ${error}`)
+        }
+    </script>
+</body>
+
+</html>
