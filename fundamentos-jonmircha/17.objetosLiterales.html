@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Los objetos literales son una nueva forma de escribir atributos y métodos.
+        // Si la variable tiene el mismo nombre de la propiedad que se pretende asignar, hay que realizar objetos literales
+        let nombre = "Lassy",
+            edad = 10;
+
+        /* 
+        Los objetos literales en la forma antigua a ECS6 se con respecto a los objetos y sus propiedade, si se queria asignar una variable a una propiedad del objeto, practicamente se tenia que sobreescribir, por ejemplo nombe: nombre, y con las funicones dentro de los objetos se tenia que hacer de la siguiente manera, ladrar: funcion(){console.log("Guuuau Guuuau")}
+        */
+        const perro = {
+            nombre: nombre,
+            edad: edad,
+            ladrar: function () {
+                console.log("Guuauu, Guauuu")
+            }
+        }
+        console.log(perro);
+        perro.ladrar();
+
+
+        /*  
+        Actualmente con ECS6 esto lo podemos realizar de una manera más corta evitanto reescribir código, ahora si se quiere utilizar variables como propiedades de un objeto, basta con que la propiedad del objeto se llame igual que la variable, nombre, edad, y en el caso de las funciones se puede acortar de la siguiente manera, ladrar2(){console.log("Guuau Guuau Guuau")} de esta manera se hace más rapido la escritura de código.
+        */
+        const dog = {
+            nombre,
+            edad,
+            raza: "Callejero",
+            ladrar2() {
+                console.log("Guauu Guauuu Guauuu")
+            }
+        }
+        console.log(dog);
+        dog.ladrar2();
+    </script>
+</body>
+
+</html>

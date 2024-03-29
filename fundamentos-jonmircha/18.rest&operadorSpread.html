@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* PARAMETROS REST */
+
+        /* Un parametro rest se utiliza siempre y cuando no sepamos cuantos valores vamos a recibir en una funcion o que es lo mismo cuando tiene a infinito, para utlizarlo entonces en una funcion se utiliza tres puntos y posteriormente el valor a recibir, en este caso es ...c  */
+        function sumar(a, b, ...c) {
+            let resultado = a + b;
+            // Todo lo que llegue despues de c se tratará como un arreglo
+            c.forEach(function (n) {
+                resultado += n;
+            });
+            return resultado;
+        }
+        // Con los dos primeros parametros no pasa nada se suman y claramente esos dos parametros sabemos que existen, pero todos los demas que se agregan si se van sumando gracias al parametro REST que utilizamos con C
+        console.log(sumar(1, 2));
+        console.log(sumar(1, 2, 3));
+        console.log(sumar(1, 2, 3, 6));
+
+
+
+
+        /* OPERADOR DE PROPAGACION O SPREAD OPERATOS */
+
+        /* Permite expandir una expresión en caso en el que se tengan multiples argumentos o elementos y se tengan que guardar, en lugar de concatenerlos uno por uno, en este caso se utiliza el spread operator */
+
+        // Nota: el Spread Operator al igual que los Parametros REST se utiliza con 3 puntos suspensivos ...
+
+        const arr1 = [1, 2, 3, 4, 5],
+            arr2 = [6, 7, 8, 9, 0];
+        console.log(arr1, arr2);
+
+        // Supongamos que debemos crear un nuevo arreglo a partir de estos dos arreglos.
+
+        // Lo siguiente está bien pero no funciona ya que lo que se hace aqui es un nuevo arreglo de dos posiciones que a su vez tiene dos arreglos de 5 posiciones cada uno, pero realmente esto no es lo que necesitamos, en este caso se nececita el spread operator
+        const arr3 = [arr1, arr2];
+        console.log(arr3);
+
+        /* Con el spread operator podemos unir los dos arreglos y crear un solo arreglo de 10 posiciones */
+        const arr4 = [...arr1, ...arr2];
+        console.log(arr4);
+    </script>
+</body>
+
+</html>

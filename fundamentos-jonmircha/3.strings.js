@@ -12,7 +12,7 @@ console.log(nombre.length, apellido.length, saludo.length);
 
 
 //Métodos
-console.log(nombre.toUpperCase());
+console.log(nombre.toUpperCase());3
 console.log(apellido.toLowerCase());
 console.log(lorem.includes("hojas", lorem.trim()));
 
