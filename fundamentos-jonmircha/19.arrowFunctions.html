@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Arrow Function
+
+        // La arrow functions es una nueva forma de declarar funciones anonimas expresadas
+
+        // Funcion declarada de manera normal
+        const saludo = function () {
+            console.log("HOLA");
+        }
+        saludo();
+
+        // Arrow Function
+        const saludo2 = () => {
+            console.log("Hola2");
+        }
+        saludo2();
+
+        // Arrow Function en una sola linea de código (solo funciona si solo tiene una linea de instrucción)
+        // Nota: cuando una arrow function no recibe parametros o recibe más de un parametro, forzozamente deben de ir los parametros
+        const saludo3 = () => console.log(`Hola3`);
+        saludo3();
+
+        // Arrow Function con un solo parametro
+        // Nota: cuando una arrow function recibe un solo parametro, podemos omitir los parentesis.
+        const saludar = nombre => console.log(`Hola ${nombre}`);
+        saludar("Dalia");
+
+
+
+
+
+
+
+        const sumar = function (a, b) {
+            return a + b;
+        }
+        console.log(sumar(2, 9));
+
+        // Las arrow functions implicitamente realizan un return, es por eso que es posible realizar el siguiente ejemplo de la funcion anterior en una sola linea de código
+        const suma = (a, b) => a + b;
+        console.log(suma(11, 93));
+
+
+
+        // Arrow function con más de una linea de código
+        const funcionVariasLineas = () => {
+            console.log("Uno");
+            console.log("Uno");
+            console.log("Uno");
+        }
+
+
+        // Iteración, recorrer un arreglo con una función normalcon arrow function
+        const numeros = [1, 2, 3, 4, 5];
+        numeros.forEach(function (el, index) {
+            console.log(`El elemento ${el} está en la posición ${index}`);
+        });
+
+        // Iteración, recorrer un arreglo con una arrow function
+        const numeros2 = [1, 2, 3, 4, 5];
+        numeros2.forEach((el, index) => {
+            console.log(`${el} está en la posición ${index}`);
+        });
+
+        // Iteración, recorrer un arreglo con una arrow function con una sola linea de código porque solo hay una operacion.
+        const numeros3 = [1, 2, 3, 4, 5];
+        numeros3.forEach((el, index) => console.log(`${el} está en la posición ${index}`));
+    </script>
+</body>
+
+</html>

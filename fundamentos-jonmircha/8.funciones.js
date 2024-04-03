@@ -42,8 +42,9 @@ function funcionDeclarada() {
 funcionDeclarada();
 
 // Funciones Expresadas
-// Este tipo de funciones se usan usualmente const y ya no es necesario colocar un nombre a la función porque el nombre con el que declara la constante es el que se le asigna, además aqui entra otro concepto el cual es Funciones Anonimas, que es cunado una función no tiene nombre.
-
+/* 
+Este tipo de funciones se usan usualmente const y ya no es necesario colocar un nombre a la función porque el nombre con el que declara la constante es el que se le asigna, además aqui entra otro concepto el cual es Funciones Anonimas, que es cunado una función no tiene nombre.
+ */
 funcionExpresada();
 const funcionExpresada = function () {
     console.log("Esto es una función expresada, es decir una función que se le a asignado como valor a una variable, si invocamos esta función antes de su declaración JS nos dirá... que no se puede acceder a la función antes de ser inicializada");

@@ -1,4 +1,4 @@
-
+// Formas de escribir una cadena de Texto
 let nombre = "Dani";
 let apellido = 'Marper';
 let saludo = new String("Hola bb"); 
@@ -6,16 +6,14 @@ let lorem = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y a
 console.log(nombre, apellido, saludo);
 
 
-//contar cantidad de caracteres con la propiedad length
-
+//Con la propiedad length podemos contar la cantidad de caracteres que tiene un string
 console.log(nombre.length, apellido.length, saludo.length);
 
-
-//Métodos
-console.log(nombre.toUpperCase());3
+//Métodos para los string
+console.log(nombre.toUpperCase());
 console.log(apellido.toLowerCase());
 console.log(lorem.includes("hojas", lorem.trim()));
 
 
-//Propiedades: son caracteristicas
-//Métodos: son acciones o funciones que permiten ejecutar algo con la variable con la que se está trabajando.
+//PROPIEDADES: son caracteristicas
+//MÉTODOS: son acciones o funciones que permiten ejecutar algo con la variable con la que se está trabajando.
