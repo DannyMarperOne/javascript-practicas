@@ -77,10 +77,41 @@
         numeros3.forEach((el, index) => console.log(`${el} está en la posición ${index}`));
 
 
-
-
         // Las arrow functions capturan el objeto this del contexto en el que se encuentren, ejemplo.
-        
+
+        // En este caso como la función existe dentro del contexto del navegador entoces this regresa el objeto window
+        function Perro() {
+            console.log(this);
+        }
+        Perro();
+
+        // En este caso this inica que está dentro del contexto local, por lo cual trae al objeto perro
+        const perro = {
+            nombre: "lassy",
+            ladrar: function () {
+                console.log(this);
+            }
+        }
+        perro.ladrar();
+
+        // Con las arrow functions hay que tener cuidado con los objetos ya que con estás toma como refencia de nuevo el contexto global o al objeto padre del objeto en el que se encuentra, this dentro de la función es el objeto window
+        const dog = {
+            nombre: "layser",
+            ladrar: () => {
+                console.log(this);
+            }
+        }
+        dog.ladrar();
+
+
+        // cuando se define el método ladrar con la nueva waisntaxis. En este caso this vuelve a ser el objeto en si mismo, ya no busca a la palabra padre
+        const dog1 = {
+            nombre: "junior",
+            ladrar() {
+                console.log(this);
+            }
+        }
+        dog1.ladrar();
     </script>
 </body>
 
