@@ -1,9 +1,11 @@
 // DECLARACION DE ARREGLOS
 
-// lo más normal es declarar los arreglos con una constante
+// Lo más normal es declarar los arreglos con una constante
 
-const a = []; //Así se declara un arreglo
-const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]]; //Se pueden agregar arreglos dentro de otrso arreglos
+//Así se declara un arreglo
+const a = [];
+//Se pueden agregar arreglos dentro de otros arreglos
+const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
 console.log(a);
 console.log(b);
 
@@ -19,7 +21,7 @@ console.log(b[3][3][0]);
 const c = Array.of("x", "y", "z", 1, 2, 3);
 console.log(c);
 
-// Usando el método fill....el arreglo es de 10 posiciones e inicializada con el valor de false
+// Usando el método fill....el arreglo es de 100 posiciones e inicializada con el valor de false
 const d = Array(100).fill(false);
 console.log(d);
 
@@ -36,6 +38,6 @@ colores.pop();
 console.log(colores);
 
 // Metodo forEach sirve para asignar algo a cada una de los elementos del arreglo, en este caso por cada uno de los elemento, se le indica que se agregren en una etiqueta li, ademas que se le interporla el index para que sea posible mostrar un id para cada uno de los elemntos
-colores.forEach(function(element,index) {
-console.log(`<li id="${index}">${element}</li>`)
+colores.forEach(function (element, index) {
+    console.log(`<li id="${index}">${element}</li>`)
 });
