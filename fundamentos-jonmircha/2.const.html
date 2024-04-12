@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // CONSTANTES
+
+        /* 
+        Una constante es un lugar de almacenamiento que nunca cambiará su valor, siempre tendrá el 
+        mismo valor.
+        */
+
+        /* 
+        Una constante es un lugar de almacenamiento que nunca cambiará su valor con los tipos de 
+        datos PRIMITIVOS: string, number boolean, etc. 
+        
+        Con los tipos de datos COMPUESTOS: array, objet, etc, si es posible cambiar el valor de 
+        sus ATRIBUTOS, ya que la referencia de los objetos sigue siendo la misma.
+        */
+
+        // Ejemplo de Constante en tipos de dato PRIMITIVOS
+
+        // Al intentar cambiar su valor, el interprete arrojará un error
+        const PI = "3.1416";
+        console.log(PI);
+
+        /*  PI = "3.15" */
+
+
+
+        // Ejemplo de Constante en tipos de dato COMPUESTOS
+
+        const objetoConst = {
+            nombre: "Daniel",
+            edad: 26
+        }
+        const colores = ["blanco", "negro", "rojo"];
+
+        console.log(objetoConst);
+        console.log(colores);
+
+        // Agregamos atributos al objeto
+        objetoConst.apodo = ("Marpercito");
+        colores.push("amazul");
+
+        console.log(objetoConst);
+        console.log(colores);
+
+        /* 
+        Como vemos, si es posible agregar más atributos a la constante, ya que estamos haciendo 
+        referencia a las propiedade y no a al objeto en si. 
+        */
+    </script>
+</body>
+
+</html>
