@@ -9,16 +9,42 @@
 
 <body>
     <script>
-        //Variable de Global
+        // VARIABLES
+        // Existen let y var
+
+        //Variable de Global (VAR)
+        /* 
+        Aunque la primer variable musica con valor POP está dentro de un bloque (que lo normal es que su 
+        funcion termine cuando se cierra el bloque), al momento de volver a imprimir la variable musica en 
+        lugar de darle el valor ROCK le deja el valor POP ya que la variable que está dentro del bloque la 
+        eleva internamente y la saca del bloque, esto usando una variable con la palabra reservada let no 
+        sucede 
+        */
+
         var musica = "Rock";
         console.log("Variable Música antes del bloque", musica);
 
         //Variable de Bloque
+        {
+            var musica = "Pop"
+            console.log("Variable musica dentro de un bloque", musica);
+        }
+        console.log("Variable musica nuevamente fuera del bloque", musica);
 
 
 
+        // Variable local (LET)
+        // Actualmente se recomienda utilizar let
 
-        // REVSAR NOTION
+        // Ambito de bloque
+        let musica2 = "Rap";
+        console.log("Variable musica antes del bloque", musica2);
+        // Esto es un bloque
+        {
+            let musica2 = "Reggae";
+            console.log("Variable musica dentro del blouqe", musica2);
+        }
+        console.log("Variable musica una vez más fuera del bloque", musica2);
     </script>
 </body>
 

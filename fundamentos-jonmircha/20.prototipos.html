@@ -18,14 +18,16 @@ POO Programación Orientada a Objetos
     • Atributos - Es una caracteristica o propiedad del objeto (son variables dentro de un objeto).
     • Médotos - Son las acciones que un objeto puede realizar (Funciones dentro de un objeto).
 
-javascript es un lenguaje orientado a objetos pero basado en prototipos no en clases a pesar de que ya contiene clases pero realmente se convierten en funciones prototipales.
+javascript es un lenguaje orientado a objetos pero basado en prototipos no en clases a pesar de que ya 
+contiene clases pero realmente se convierten en funciones prototipales.
 
 un prototipo es un mecanismo por el cual un objeto puede heredar atributos y metodos de un objeto padre.
 */
 
 
         /* El siguiente ejemplo no es funcional realmente,
-        aunque al parecer hace lo que queremos que es imprimir a snoopy y a don gato, lo que hacemos es copiar el mismo codigo y cambiar propiedades, ocupamos lineas de código extra */
+        aunque al parecer hace lo que queremos que es imprimir a snoopy y a don gato, lo que hacemos es 
+        copiar el mismo codigo y cambiar propiedades, ocupamos lineas de código extra */
 
         /*     const animal = {
                 nombre: "Snoopy",
@@ -43,7 +45,8 @@ un prototipo es un mecanismo por el cual un objeto puede heredar atributos y met
             console.log(animal2);
          */
 
-        /* Para poder generar un prototipo para poder estár generando varios animales sin repetir código, hay que crear una "funcion constructora".
+        /* Para poder generar un prototipo para poder estár generando varios animales sin repetir código, 
+        hay que crear una "funcion constructora".
         
         Esta función se crea una sola vez y a partir de ella se generan nueva instancias(objetos)*/
 
@@ -66,8 +69,12 @@ un prototipo es un mecanismo por el cual un objeto puede heredar atributos y met
              }
          } */
 
-        /* Para crear nuevos animales hay que crear constantes con new, ya que new nos va a permir crear una nueva instancia del tipo que le especifiquemos (textos, array, etc), en este caso a la funcion constructora Animal */
-        /* const snoopy = new Animal("Snoopy", "Macho");
+        /* Para crear nuevos animales hay que crear constantes con new, ya que new nos va a permir 
+        crear una nueva instancia del tipo que le especifiquemos (textos, array, etc), en este caso 
+        a la funcion constructora Animal */
+        /* 
+        
+        const snoopy = new Animal("Snoopy", "Macho");
         const donGato = new Animal("DonGato", "Macho");
 
         console.log(snoopy);
@@ -79,9 +86,14 @@ un prototipo es un mecanismo por el cual un objeto puede heredar atributos y met
         donGato.saludar(); */
 
 
-        /* Como vemos en consola ya es menos código el que se utiliza para generar nuevos animales y eso es perfecto, pero ahora, la función (metodo) sonar y saludar se repite en cada uno de los animales que creamos, y en caso en el que necesitemos mil animales, esto llega a ser un problema porque es necesario de más memoria, por cual es necesario realizar una mejora para este caso */
+        /* Como vemos en consola ya es menos código el que se utiliza para generar nuevos animales y eso 
+        es perfecto, pero ahora, la función (metodo) sonar y saludar se repite en cada uno de los animales 
+        que creamos, y en caso en el que necesitemos mil animales, esto llega a ser un problema porque es 
+        necesario de más memoria, por cual es necesario realizar una mejora para este caso */
 
-        /* Lo ideal al crear funciones constructoras con las cuales pretendemos crear prototipos en js en poo. Lo ideal es que estas FC, solo contengan los atributos y que los métodos los saquemos de la función y se las peguemos al prototipo*/
+        /* Lo ideal al crear funciones constructoras con las cuales pretendemos crear prototipos en js 
+        en poo. Lo ideal es que estas FC, solo contengan los atributos y que los métodos los saquemos de 
+        la función y se las peguemos al prototipo*/
 
         //Funcion constructora #2 (Asignamos los métodos al prototipo y no a la función como tal)
 
