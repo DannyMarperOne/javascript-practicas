@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         let a = 2;
@@ -13,18 +15,29 @@
         let d = "5.6";
 
         console.log(a, b);
-        console.log(c.toFixed(1)); //To Fixed y el numero que va entre parentesis indica la cantidad de valores se mostrarán en la consola.
+        //El numero que va entre parentesis indica la cantidad de valores se mostrarán en la consola que estén despues del punto.
+        console.log(c.toFixed(1));
         console.log(c.toFixed(5));
-        console.log(parseInt(c)); //Devulve la parte entera del numero que tiene la variable, en caso de 5.3, solo devuelve 5
-        console.log(typeof(c)); //Indica el tipo de dato que es la variable que está entre parentesis
-        console.log(a + d); //Devuleve 25.6 ya que como d es una cadena y por la precedencia del operador + este en lugar de sumar los concatena
+        //Devulve la parte entera del numero que tiene la variable, en caso de 7.19, solo devuelve 7
+        console.log(parseInt(c));
+        //Indica el tipo de dato que es la variable que está entre parentesis
+        console.log(typeof (c));
+        //Devuleve 25.6 ya que como d es una cadena y por la precedencia del operador + este en lugar de sumar los concatena
+        console.log(a + d);
+
         // Para sumar un tipo de dato cadena a un tipo de dato de numero hay que realizar un casting o lo que es lo mismo un cambio de tipo de dato
-        console.log(c + parseInt(d)); //Aqui hay un pequeño error ya que entrega un numero muy grande y javascrip tiene problema con este tipo de numero
-        console.log(c + parseFloat(d)); //Aqui ya entrega el resultado de manera correcta
+        //Aqui hay un pequeño error ya que entrega un numero muy grande y javascrip tiene problema con este tipo de numero
+        console.log(c + parseInt(d));
+        //Aqui ya entrega el resultado de manera correcta
+        console.log(c + parseFloat(d));
 
         // Otra forma de escribir la linea anterior es con el contructor del objeto number, es la siguiente
-        console.log(c + Number.parseFloat(d)); //y funciona de la misma forma solo que esta manera es un poco más formal
+        //y funciona de la misma forma solo que esta manera es un poco más formal
+        console.log(c + Number.parseFloat(d));
 
+        // Otra nueva forma sería la siguiente en la que tienes que anteponer un signo de + a la cadena de texto
+        console.log(c + +d);
     </script>
 </body>
+
 </html>
