@@ -16,7 +16,21 @@
         let saludo = "Hola mucho gusto " + nombre + " " + apellido + ".";
         console.log(saludo);
 
+
+
+
+
         // Intepolación de variables
+        /* 
+        La template strings se utilizan `` (Se utilizan las comillas simples invertidas o backtiks) 
+        en lugar de comillas simples o comillas dobles. Con las templates strings ahorramos caracteres 
+        al momento de escribir una cadena de caracteres concatenándolas con variables o constantes a 
+        lo cual llamamos "Interpolación de Variables"
+        
+        Este es solo uno de los tantos ejemplos del uso de las template string, pero se puede usar con 
+        constantes, cadenas de texto, funciones, etiquetas, etc.
+        */
+
         // Templates Strings
         let saludo2 = `Hola al nuevo amigo ${nombre} ${apellido}.`;
         console.log(saludo2);
@@ -24,12 +38,15 @@
 
         // Error al usar comillas dobles con html
         /* 
-        Para usar comillas dobles con html, el html hay que utilizarlo en una sola linea para que no marque errores 
+        Para usar comillas dobles con html, el html hay que utilizarlo en una sola 
+        linea para que no marque errores 
         */
         let ul = " <ul><li>Primavero</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>"
         console.log(ul);
 
-        // Para evitar este problema y que sea mas legible, es mejor utiilizar las comillas invertidas que se utilizan en el template string
+        /* Para evitar este problema y que sea mas legible, es mejor utiilizar las comillas 
+        invertidas que se utilizan en el template string ``
+         */
         let ul2 = `
         <ul>
             <li>Primavero</li>
