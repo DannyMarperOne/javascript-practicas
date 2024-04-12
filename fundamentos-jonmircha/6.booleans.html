@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        El tipo *boolean* tiene sólo dos valores posibles: `true` y `false`.
+        
+        Este tipo se utiliza comúnmente para almacenar valores de sí/no: `true` significa 
+        “sí, correcto, verdadero”, y `false` significa “no, incorrecto, falso”.
+        */
+
+        let verdadero = true;
+        let falso = false;
+
+        console.log(verdadero, falso);
+        console.log(typeof verdadero, typeof falso);
+
+
+        // Convertir cadenas a números
+
+        let apples = "2";
+        let oranges = "3";
+
+        alert(apples + oranges); // "23", el binario suma concatena las cadenas
+
+
+        // Si queremos tratarlos como números primero hay que convertirlos con +
+        let pineapple = "2";
+        let limes = "3";
+
+        alert(+pineapple + +limes); // 5
+
+        // La variante más larga
+        // alert( Number(pineapple) + Number(limes) ); // 5
+
+        let hola = "";
+        let adios = "dddd"
+        console.log(+true, +""); //1 y 0 Practicamente verdadero y falso
+    </script>
+</body>
+
+</html>
