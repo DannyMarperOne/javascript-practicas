@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let bancoCliente = "BBVA";
+        let cuentaCliente = true;
+        let saldoCliente = 10000;
+        let bancoDestino = "BBVA";
+        let cuentaDestino = true;
+        let horario = 20;
+        let transaccion = 5000000;
+
+        function transferencia() {
+            if ((horario >= 9 && horario <= 12) || (horario >= 15 && horario <= 20)) {
+                if (cuentaCliente && cuentaDestino) {
+                    if (bancoCliente && bancoDestino != "BBVA") {
+                        let comision = 100;
+                        if (saldoCliente >= transaccion + comision) {
+                            console.log(
+                                `Transacción exitosa, tranferiste $${transaccion} USD. Comisión por transferencia $${comision} USD`
+                            );
+                        } else {
+                            console.log(`No cuentas con saldo suficiente,tu saldo actual es de $${saldoCliente} USD`);
+                        }
+                    } else if (saldoCliente >= transaccion) {
+                        console.log(`Transacción exitosa, tranferiste $${transaccion} USD`)
+                    } else {
+                        console.log("No cuentas con saldo suficiente");
+                    }
+                } else {
+                    console.log("Los clientes no existen");
+                }
+            } else {
+                console.log("En este horario no podemos aternderte");
+            }
+        }
+        transferencia();
+    </script>
+</body>
+
+</html>

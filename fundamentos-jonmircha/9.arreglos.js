@@ -36,8 +36,11 @@ console.log(colores);
 // Metodo pop elimina el ultimo elemento del arreglo
 colores.pop();
 console.log(colores);
+//["Rojo", "Verde", "Azul", "Negro"]
 
-// Metodo forEach sirve para asignar algo a cada una de los elementos del arreglo, en este caso por cada uno de los elemento, se le indica que se agregren en una etiqueta li, ademas que se le interporla el index para que sea posible mostrar un id para cada uno de los elemntos
+/* Metodo forEach sirve para asignar algo a cada una de los elementos del arreglo, 
+en este caso por cada uno de los elemento, se le indica que se agregren en una etiqueta li, 
+ademas que se le interporla el index para que sea posible mostrar un id para cada uno de los elemntos */
 colores.forEach(function (element, index) {
     console.log(`<li id="${index}">${element}</li>`)
 });
