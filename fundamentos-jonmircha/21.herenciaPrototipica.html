@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        Herencia: capacidad de poder heredar las características de un padre a un hijo.
+
+        Nota: por lo general esto en otro tipo de lenguaje de programación, 
+        pero en JavaScript se hace a traves de cadnas prototipica.
+        */
+
+
+        // Elemento padre (Funcion Constructora)
+        function Animal2(nombre, genero) {
+            // Atributos
+            this.nombre = nombre,
+                this.genero = genero
+        }
+        // Métodos agregados al prototipo de la funcion constructora
+        Animal2.prototype.sonar = function () {
+            console.log("Hago sonidos porque esoy vivo");
+        }
+        Animal2.prototype.saludar = function () {
+            console.log(`Hola, me llamo ${this.nombre}`);
+        }
+
+
+
+        // Herencia Propotipica
+
+        // Creacion de la función constructora
+        function Perro(nombre, genero, tamanio) {
+            this.super =
+                Animal2; //la variable super va a ser igual al prototipo del cual se va a hacer la herencia, el elemnto padre de perro será animal
+            this.super(nombre, genero); //ejecutamos el método super
+            this.tamanio = tamanio;
+        }
+        // Perro está heredando de Animal
+        Perro.prototype = new Animal2(); //Perro va a ser igual a una nueva instancia de la función Animal
+        Perro.prototype.constructor = Perro;
+
+        // sobreescrutura de métodos del Protoripo padre en el hijo
+        Perro.prototype.sonar = function () {
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+        Perro.prototype.ladrar = function () {
+            console.log("Guuuuau Guuuuau")
+        }
+
+
+
+
+        const dog = new Perro("Dog", "Macho", "Mediano");
+        const betoven = new Animal2("betoven", "Macho");
+
+        console.log(dog);
+        console.log(betoven);
+
+        dog.sonar();
+        dog.saludar();
+        betoven.sonar();
+        betoven.saludar();
+    </script>
+</body>
+
+</html>
