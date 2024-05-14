@@ -11,8 +11,11 @@
     <script>
         // Manejo de Errores (TRY, CATCH, FINALLY)
 
-        // En el momento en el que el bloque try detecta un error, en ese momento detiene la ejecución del código y entra el catch como respuesta
+        /* En el momento en el que el bloque try detecta un error, en ese momento detiene 
+        la ejecución del código y entra el catch como respuesta */
+
         // El bloque finally realmente no se usa pero es bueno sabe que existe.
+
         try {
             console.log("En el try se agrega el código a evaluar");
             noExiste;
@@ -22,8 +25,7 @@
             console.log(error);
         } finally {
             console.log(
-                "El bloque finally se ejecutará siempre al final de un bloque try-catch"
-            );
+                "El bloque finally se ejecutará siempre al final de un bloque try-catch");
         }
 
         // Personalizar tus propios mensaje de error.

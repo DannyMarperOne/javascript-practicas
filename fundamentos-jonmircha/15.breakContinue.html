@@ -9,18 +9,30 @@
 
 <body>
     <script>
-        // Nota: Break y Continue no son posible usarlos en métodos de los arreglos, solo para estructuras de control
+        /* 
+        Nota: Break y Continue no son posible usarlos en métodos de los arreglos, 
+        solo para estructuras de control
+         */
+
         // Nota: Break y Continue toman en cuenta la posición de los arreglos.
         const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-        // BREAK: Con break se sale de la estructura en la que está, en este caso el for
+        /*  
+        BREAK: En el momento en el que se usa break, el proceso se sale de la estructura en la que está, 
+        en este caso el for. 
+        Basicamente break rompe el código y lo termina en ese punto donde esté el colocado. 
+        */
         for (let i = 0; i < numeros.length; i++) {
             if (i === 5) {
                 break;
             }
             console.log(numeros[i]);
         }
-        // CONTINUE: Con continue rompe el ciclo en el lugar donde elegimos pero despues continua el ciclo, practicamente se salta la posición.Omite el codigo que sigue en la iteración, en este caso salta el numero 6
+        /* 
+        CONTINUE: Con continue rompe el ciclo en el lugar donde elegimos pero después continua 
+        el ciclo, practicamente se salta la posición. Omite el codigo que sigue en la iteración, 
+        en este caso salta el numero 6. 
+        */
         for (let i = 0; i < numeros.length; i++) {
             if (i === 5) {
                 continue;
