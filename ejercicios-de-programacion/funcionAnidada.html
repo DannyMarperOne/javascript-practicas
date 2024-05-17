@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Funciones Anidadas
+
+        // Ejemplo #1
+        function multiplicarPor(num) {
+            return function (otroNumero) {
+                return otroNumero * num;
+            }
+        }
+
+        const dameElDoble = multiplicarPor(2);
+
+        // El siguiente código es casi como si pusieras lo que está en la línea 21 
+        // (Solo es para entender)
+        /* 
+            const dameElDoble = function(otroNumero){
+                return otroNumero * 2;
+            }
+        */
+
+        console.log(dameElDoble(3)); // Resultado: 6
+
+
+
+        // Ejemplo #2
+        function valorEntreDosNumeros(x, y) {
+            return function (numero) {
+                return (numero => x && numero <= y);
+            }
+        }
+
+        let valor = valorEntreDosNumeros(0, 100);
+        console.log(valor(200)); //Resultado: False
+    </script>
+</body>
+
+</html>
