@@ -116,7 +116,32 @@ console.log(car2);
 
 //****************** Set ******************
 
-const setCreator = new Set([1, 2, 3, 4, 5]); //Cración de Set
-console.log(setCreator.has(1)); //Busqueta de set
-console.log(setCreator.has(5));
-console.log(setCreator.has(8));
+const setCreator = new Set([1, 2, 3, 4, 5]); //Cración de Set con constructor
+
+// Has devuelve si un elemento pertenece o no al set
+console.log(setCreator.has(1)); //true
+console.log(setCreator.has(5)); //true
+console.log(setCreator.has(8)); //false
+
+setCreator.add("Texto Libre"); //Agregar elemento a un set
+const objectSet = {
+    nombre: "JavaScript",
+    version: "ECMAScript 6"
+}
+setCreator.add(10).add("Otro texto");
+setCreator.add(objectSet); //Agregar elemento a un set
+console.log(setCreator);
+
+console.log(setCreator.size); //Retorno del tamaño del set
+
+
+//Elimina un elemento existente del objeto set (Devuelve True refiriendose a que "El elemento fue eliminado exitosamente")
+console.log(setCreator.delete(1));
+
+setCreator.clear(); //Eliminar todos los elementos dentro del objeto set
+console.log(setCreator.size);
+console.log(setCreator);
+
+
+
+// ***************** WeakSet ******************
