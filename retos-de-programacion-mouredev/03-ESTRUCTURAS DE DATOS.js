@@ -116,7 +116,7 @@ console.log(car2);
 
 //****************** Set ******************
 
-const setCreator = new Set([1, 2, 3, 4, 5]); //Cración de Set con constructor
+const setCreator = new Set([1, 2, 3, 4, 5]); //Cración de constructor Set
 
 // Has devuelve si un elemento pertenece o no al set
 console.log(setCreator.has(1)); //true
@@ -145,3 +145,17 @@ console.log(setCreator);
 
 
 // ***************** WeakSet ******************
+
+//A un WeakSet solo es posible pasarle objetos.
+const wk = new WeakSet; //Creación de constructor WeakSet
+const wkOne = {};
+const wkTwo = {};
+
+wk.add(wkOne);
+wk.add(wkTwo);
+
+wk.has(wkOne);
+wk.has(wkTwo);
+
+wk.delete(wkOne);
+console.log(wk.has(wkOne));
