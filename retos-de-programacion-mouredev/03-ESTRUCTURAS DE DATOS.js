@@ -151,11 +151,46 @@ const wk = new WeakSet; //Creación de constructor WeakSet
 const wkOne = {};
 const wkTwo = {};
 
-wk.add(wkOne);
+wk.add(wkOne); //Agregar objeto al WeakSet
 wk.add(wkTwo);
 
-wk.has(wkOne);
+wk.has(wkOne); //Valida si existe dentro del WeakSet o no
 wk.has(wkTwo);
 
-wk.delete(wkOne);
+wk.delete(wkOne); //Eliminación del objeto (Devuelve True "Fue eliminado exitosamente")
 console.log(wk.has(wkOne));
+
+
+
+
+// ****************** Map ****************
+
+const myMap = new Map([
+    ["Trampa", "Sombreros Mágicos"],
+    ["Monstruo", "Mago Oscuro"],
+    ["Especial", "Exodia"],
+    ["Magica", "Espadas de luz reveladora"],
+    [1000, "Vida Actual"]
+]); //Creación del constructor Map
+
+myMap.set("Dios Egipcio", "Obelisco el atormetador"); //Agregar un elemento Key-Value
+console.log(myMap.delete("Trampa")); //Eliminar un elemento Key-Value
+console.log(myMap.get("Magica")); //Obtienes el Value asociado al Key
+
+
+
+
+const inventory = [
+    { name: 'asparagus', type: 'vegetables', quantity: 9 },
+    { name: 'bananas', type: 'fruit', quantity: 5 },
+    { name: 'goat', type: 'meat', quantity: 23 },
+    { name: 'cherries', type: 'fruit', quantity: 12 },
+    { name: 'fish', type: 'meat', quantity: 22 },
+];
+
+const restock = { restock: true };
+const sufficient = { restock: false };
+const result = Map.groupBy(inventory, ({ quantity }) =>
+    quantity < 6 ? restock : sufficient,
+);
+console.log(result.get(restock));
