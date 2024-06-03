@@ -179,3 +179,45 @@ console.log(myMap.get("Magica")); //Obtienes el Value asociado al Key
 console.log(myMap.size); //Verificar tamaño de Map
 
 
+/* 
+DIFICULTAD EXTRA (opcional):
+ * Crea una agenda de contactos por terminal.
+ * - Debes implementar funcionalidades de búsqueda, inserción, actualización y eliminación de contactos.
+ * - Cada contacto debe tener un nombre y un número de teléfono.
+ * - El programa solicita en primer lugar cuál es la operación que se quiere realizar, y a continuación
+ *   los datos necesarios para llevarla a cabo.
+ * - El programa no puede dejar introducir números de teléfono no númericos y con más de 11 dígitos.
+ *   (o el número de dígitos que quieras)
+ * - También se debe proponer una operación de finalización del programa. 
+ * */
+
+const agenda = [];
+
+function validatePhone(number) {
+    return /^\d{10,11}$/.test(number);
+}
+function findName(name) {
+    return agenda.find(contact => contact.Nombre === name);
+}
+
+function agenda() {
+
+}
+function panelPrincipal() {
+    alert("Bienvenido a la agenda principal");
+    prompt(`Selecciona la opción de tu preferencia:
+1: Buscar a un contacto.
+2: Agregar a un nuevo contacto
+3: Actualizar a un contacto
+4: Eliminar a un contacto`)
+}
+switch (key) {
+    case 1:
+        alert("Esto es uno")
+        break;
+
+    default:
+        break;
+}
+
+panelPrincipal();
