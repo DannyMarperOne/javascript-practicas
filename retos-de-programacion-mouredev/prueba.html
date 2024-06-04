@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const listContact = [];
+
+        function validatePhone(number) {
+            return /^\d{10,11}$/.test(number);
+        }
+
+        const searchContact = function () {
+            if (listContact.length === 0) {
+                alert("Aún no hay ningun contacto agregado")
+            } else {
+                console.log(listContact);
+            }
+            return panelPrincipal();
+
+        }
+        const addContact = function () {
+            let name = prompt(`Escribe el nombre del nuevo contacto`);
+            let number = parseInt(prompt(`Escribe el número del nuevo contacto`));
+            if (validatePhone(number)) {
+                listContact.push(name, number);
+            } else {
+                alert.error("Error al realizar la operación");
+            }
+
+
+            return panelPrincipal();
+
+        }
+        const updateContact = function () {
+            alert("Funciona 3");
+            return panelPrincipal();
+
+        }
+        const deleteContact = function () {
+            alert("Funciona 4");
+            return panelPrincipal();
+        }
+
+        function panelPrincipal() {
+            alert("Bienvenido a la agenda principal");
+            let numberOption = prompt(
+                `Selecciona la opción de tu preferencia: 1: Buscar a un contacto.2: Agregar a un nuevo contacto 3: Actualizar a un contacto 4: Eliminar a un contacto`
+            );
+            switch (numberOption) {
+                case "1":
+                    return searchContact();
+                    break;
+                case "2":
+                    return addContact();
+                    break
+                case "3":
+                    return updateContact();
+                    break
+                case "4":
+                    return deleteContact();
+                    break
+                default:
+                    alert("La selección fue incorrecta")
+                    break;
+            }
+        }
+        panelPrincipal();
+    </script>
+</body>
+
+</html>
