@@ -10,33 +10,37 @@
 <body>
     <script>
         function panelPrincipal() {
-            const listContact = new Map([]);
+            const listContact = new Map([["Daniel", "2222222222"]]);
 
-            function validatePhone(number) {
-                return /^\d{10,11}$/.test(number);
-            }
             const searchContact = function () {
-                if (listContact.length === 0) {
-                    alert("Aún no hay ningun contacto agregado")
-                } else {
-                    alert(listContact);
+                for (let [key, value] of listContact) {
+                    console.log(`Nombre: ${key}, Teléfono: ${value}`);
                 }
-                return panelPrincipal();
-
+                let name = prompt(`Introduce el nombre del contacto que buscas`);
+                if (listContact.has(name)) {
+                    alert("HOLA");
+                } else {
+                    alert("No existe");
+                }
             }
             const addContact = function () {
                 let name = prompt(`Escribe el nombre del nuevo contacto`);
-                let number = prompt(`Escribe el número del nuevo contacto`);
-                if (number.length > 0) {
-                    listContact.set(name, number);
-                    alert("Agregado con exito");
+                let phone = parseInt(prompt(`Escribe el número del nuevo contacto`));
+                if (/^\d{10,11}$/.test(phone)) {
+                    listContact.set(name, phone);
+                    alert("Nuevo contacto agregado a la agenda con éxito");
+                    for (let [key, value] of listContact) {
+                        console.log(`Nombre: ${key}, Teléfono: ${value}`);
+                    }
                 } else {
                     alert("Debes introducir un número de teléfono válido")
                 }
-
             }
             const updateContact = function () {
-                alert("Funciona 3");
+                let name = prompt(`Escribe el nombre del contacto que deseas actualizar`);
+                if (name === addContact(name)) {
+                    alert("Hola");
+                }
                 return panelPrincipal();
 
             }
@@ -47,7 +51,12 @@
                 }
                 return panelPrincipal();
             }
-            const is_on = true;
+
+
+
+
+
+            var is_on = true;
             while (is_on) {
                 alert("Bienvenido a la agenda principal");
                 let numberOption = prompt(
@@ -58,12 +67,29 @@
                 4: Eliminar a un contacto.
                 5: Salir.`
                 );
+                let name = null;
+                let phone = null;
                 switch (numberOption) {
                     case "1":
-                        return searchContact();
+                        /* for (let [key, value] of listContact) {
+                            console.log(`Nombre: ${key}, Teléfono: ${value}`);
+                        } */
+                        name = prompt(`Introduce el nombre del contacto que buscas`);
+                        if (listContact.has(name)) {
+                            alert("HOLA");
+                        } else {
+                            alert("No existe");
+                        }
                         break;
                     case "2":
-                        return addContact();
+                        name = prompt(`Escribe el nombre del nuevo contacto`);
+                        phone = parseInt(prompt(`Escribe el número del nuevo contacto`));
+                        if (/^\d{10,11}$/.test(phone)) {
+                            listContact.set(name, phone);
+                            alert("Nuevo contacto agregado a la agenda con éxito");
+                        } else {
+                            alert("Debes introducir un número de teléfono válido")
+                        }
                         break
                     case "3":
                         return updateContact();
