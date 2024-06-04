@@ -192,33 +192,4 @@ DIFICULTAD EXTRA (opcional):
  * - También se debe proponer una operación de finalización del programa. 
  * */
 
-const agenda = [];
 
-function validatePhone(number) {
-    return /^\d{10,11}$/.test(number);
-}
-function findName(name) {
-    return agenda.find(contact => contact.Nombre === name);
-}
-
-function agenda() {
-
-}
-function panelPrincipal() {
-    alert("Bienvenido a la agenda principal");
-    prompt(`Selecciona la opción de tu preferencia:
-1: Buscar a un contacto.
-2: Agregar a un nuevo contacto
-3: Actualizar a un contacto
-4: Eliminar a un contacto`)
-}
-switch (key) {
-    case 1:
-        alert("Esto es uno")
-        break;
-
-    default:
-        break;
-}
-
-panelPrincipal();
