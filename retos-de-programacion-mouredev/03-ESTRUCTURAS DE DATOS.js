@@ -193,3 +193,83 @@ DIFICULTAD EXTRA (opcional):
  * */
 
 
+function panelPrincipal() {
+    const listContact = new Map([
+        ["Daniel", "29293018309"]
+    ]);
+
+    var is_on = true;
+    while (is_on) {
+
+        alert("Bienvenido a la agenda principal");
+
+        let numberOption = prompt(
+            `Selecciona la opción de tu preferencia: 
+        0: Ver la agenda completa.
+        1: Buscar a un contacto.
+        2: Agregar a un nuevo contacto. 
+        3: Actualizar a un contacto.
+        4: Eliminar a un contacto.
+        5: Salir.`
+        );
+
+        let name = null;
+        let phone = null;
+
+        switch (numberOption) {
+            case "0":
+                for (let [key, value] of listContact) {
+                    alert(`Nombre: ${key}, Teléfono: ${value}`);
+                }
+                break;
+            case "1":
+                name = prompt(`Introduce el nombre del contacto que buscas`);
+                if (listContact.has(name)) {
+                    let phoneNumber = listContact.get(name);
+                    alert(`El contacto ${name} tiene asignado el número ${listContact}`)
+                } else {
+                    alert(`El contacto ${name} no existe.`);
+                }
+                break;
+            case "2":
+                name = prompt(`Escribe el nombre del nuevo contacto`);
+                phone = parseInt(prompt(`Escribe el número del nuevo contacto`));
+                if (/^\d{10,11}$/.test(phone)) {
+                    listContact.set(name, phone);
+                    alert("Nuevo contacto agregado a la agenda con éxito");
+                } else {
+                    alert("Debes introducir un número de teléfono válido")
+                }
+                break;
+            case "3":
+                name = prompt(`Introduce el nombre del contacto que deseas actualizar.`);
+                if (listContact.has(name)) {
+                    phone = parseInt(prompt(`Escriba el nuevo número del contacto ${name}`));
+                    if (/^\d{10,11}$/.test(phone)) {
+                        listContact.set(name, phone);
+                        alert("El contacto fue actualizado");
+                    } else {
+                        alert("Debes introducir un número de teléfono válido")
+                    }
+                }
+                break;
+            case "4":
+                name = prompt(`Introduce el nombre del contacto que deseas eliminar`);
+                if (listContact.has(name)) {
+                    listContact.delete(name);
+                    alert(`Contacto eliminado exitosamente`)
+                } else {
+                    alert(`El contacto ${name} no existe.`);
+                }
+                break;
+            case "5":
+                alert("Saliendo de la agenda.")
+                is_on = false;
+                break;
+            default:
+                alert("Selección incorrecta, selecciona una opción del 1 al 5.")
+                break;
+        }
+    }
+}
+panelPrincipal();
