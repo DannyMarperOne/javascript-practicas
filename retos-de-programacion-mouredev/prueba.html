@@ -15,15 +15,15 @@
             var is_on = true;
             while (is_on) {
 
-                alert("Bienvenido a la agenda principal");
+                alert("Agenda de contactos");
 
                 let numberOption = prompt(
                     `Selecciona la opción de tu preferencia: 
-                0: Ver la agenda completa.
-                1: Buscar a un contacto.
-                2: Agregar a un nuevo contacto. 
-                3: Actualizar a un contacto.
-                4: Eliminar a un contacto.
+                0: Ver lista de contactos.
+                1: Buscar un contacto.
+                2: Agregar un nuevo contacto. 
+                3: Actualizar un contacto.
+                4: Eliminar un contacto.
                 5: Salir.`
                 );
 
@@ -40,7 +40,7 @@
                         name = prompt(`Introduce el nombre del contacto que buscas`);
                         if (listContact.has(name)) {
                             let phoneNumber = listContact.get(name);
-                            alert(`El contacto ${name} tiene asignado el número ${listContact}`)
+                            alert(`El contacto ${name} tiene asignado el número ${phoneNumber}`)
                         } else {
                             alert(`El contacto ${name} no existe.`);
                         }
@@ -50,9 +50,9 @@
                         phone = parseInt(prompt(`Escribe el número del nuevo contacto`));
                         if (/^\d{10,11}$/.test(phone)) {
                             listContact.set(name, phone);
-                            alert("Nuevo contacto agregado a la agenda con éxito");
+                            alert(`El contacto ${name} fue agregado con éxito`);
                         } else {
-                            alert("Debes introducir un número de teléfono válido")
+                            alert("Debes introducir un número de télefono de 10 u 11 dígitos")
                         }
                         break;
                     case "3":
@@ -61,9 +61,9 @@
                             phone = parseInt(prompt(`Escriba el nuevo número del contacto ${name}`));
                             if (/^\d{10,11}$/.test(phone)) {
                                 listContact.set(name, phone);
-                                alert("El contacto fue actualizado");
+                                alert(`El contacto ${name} fue actualizado`);
                             } else {
-                                alert("Debes introducir un número de teléfono válido")
+                                alert(`No se pudo actualizar al contacto ${name}, favor de verificar el número de teléfono, este debe contener de 10 a 11 dígitos.`)
                             }
                         }
                         break;
@@ -81,7 +81,7 @@
                         is_on = false;
                         break;
                     default:
-                        alert("Selección incorrecta, selecciona una opción del 1 al 5.")
+                        alert("Selección incorrecta, selecciona una opción del 0 al 5.")
                         break;
                 }
             }
