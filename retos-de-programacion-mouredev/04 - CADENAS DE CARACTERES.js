@@ -58,17 +58,17 @@ console.log("".concat(...greetList)); //Salida: "Hello Venkat!"
 let frase = "El campeon Max Verstappen vs el 7 veces campeon Lewis Hamilton"
 let piloto = "Max";
 
-console.log(`La palabra ${piloto} ${frase.includes(piloto)? 'si' : 'no'} está dentro de la frase principal!`); //Devuelve si o no
+console.log(`La palabra ${piloto} ${frase.includes(piloto) ? 'si' : 'no'} está dentro de la frase principal!`); //Devuelve si o no
 console.log(`La palabra ${piloto} ${frase.includes(piloto)} está dentro de la frase principal!`); //Devulve true o false
-console.log(`La palabra ${piloto} ${frase.includes(piloto,12)} está dentro de la frase principal!`); //Busca apartir de la posición 12 de la cadena (False)
+console.log(`La palabra ${piloto} ${frase.includes(piloto, 12)} está dentro de la frase principal!`); //Busca apartir de la posición 12 de la cadena (False)
 
 
 
 //*************** endsWhith() ************* */
 
 let fraseTwo = "Arriba el futbol de Monterrey"
-console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('Monterrey')?'SI':'NO'}`); //Determina la última palabra del string
-console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('Monterrey', 3)?'SI':'NO'}`); //La posición de busqueda va de cualquier posición hacia atras
+console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('Monterrey') ? 'SI' : 'NO'}`); //Determina la última palabra del string
+console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('Monterrey', 3) ? 'SI' : 'NO'}`); //La posición de busqueda va de cualquier posición hacia atras
 
 
 
@@ -97,6 +97,23 @@ console.log(posicion); //Salida: -1 (Cuando ya no encontra más posiciones en el
 
 
 
+
+// Secuencias de escape o Notación de escape
+let saludar = "Hola \n Daniel como estás \'Amigo\' \nMi nombre es \\ Gloria \\ \"Cabeza de Bolo\" Jejejej \r y tu? \v tabulacion vertical \t jejjeej \f ijijjiji \ud83d";
+console.log(saludar);
+
+// Cadenas literales largas
+let adios = "Adios amigo \
+me tengo que ir \
+mañana debo de trabajar"; //Adios amigo me tengo que ir mañana debo de trabajar
+
+let bye = "Adios amigo" +
+    "me tengo que ir" +
+    "mañana debo de trabajar"; //Adios amigo me tengo que ir mañana debo de trabajar
+
+
+
+
 // String.fromCharCode() 
 // Devuelve una cadena creada de valores Unicode.
 console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
@@ -105,8 +122,10 @@ console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
 //Devuleve cadenas en crudo, sin procesar
 
 let name = "Daniel";
-let full = String.raw `Hola\n${name}\\ como estás \"`;
+let full = String.raw`Hola\n${name}\\ como estás \"`;
 /* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
 ni agrega comillas, todo lo pasa literal. */
 
 console.log(full); //Salida: Hola\n${name}\\ como estás \"
+
+
