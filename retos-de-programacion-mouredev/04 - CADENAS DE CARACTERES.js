@@ -72,13 +72,24 @@ console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('M
 
 
 
+//*************** indexOf() y lastIndexOf() ************* */
+
+let cadena = "MasterClassEnds";
+
+console.log(cadena.indexOf("m")); //Salida: -1 (no encontrará la posición de 'm' porque indexOf es sencible a Mayusculas)
+console.log(cadena.indexOf("M")); //Salida: 0
+console.log(cadena.indexOf("a")); //Salida: 1 (indexOf busca el primer caracter de izquierda a derecha)
+console.log(cadena.lastIndexOf("a")); //Salida: 8 (lasIndexOf busca el primer caracter pero de derecha a izquierda)
 
 
-
-
-
-
-
+let cuenta = 0;
+let posicion = cadena.indexOf("s");
+while (posicion != -1) {
+    cuenta++;
+    posicion = cadena.indexOf("s", posicion + 1);
+}
+console.log(cuenta); //Salida: 4 (En si porque solo existen 4 's' dentro del string entonces la iteración fue de 4)
+console.log(posicion); //Salida: -1 (Cuando ya no encontra más posiciones en el string retorna -1)
 
 
 
