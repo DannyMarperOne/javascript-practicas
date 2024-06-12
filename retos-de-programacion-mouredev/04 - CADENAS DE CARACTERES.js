@@ -81,7 +81,6 @@ console.log(cadena.indexOf("M")); //Salida: 0
 console.log(cadena.indexOf("a")); //Salida: 1 (indexOf busca el primer caracter de izquierda a derecha)
 console.log(cadena.lastIndexOf("a")); //Salida: 8 (lasIndexOf busca el primer caracter pero de derecha a izquierda)
 
-
 let cuenta = 0;
 let posicion = cadena.indexOf("s");
 while (posicion != -1) {
@@ -110,17 +109,14 @@ let nombres = ["Pedro", "Ana", "Juan"];
 nombres.sort((a, b) => a.localeCompare(b)); //Ocupamos sort para ordenar un arreglo y con localCompare le decimos que lo ordene alfabeticamente.
 console.log(nombres);
 
-
 //Se puede especificar el idioma en el que se requiere hacer la comparación
 console.log("ä".localeCompare("z", "de")); // un valor negativo: en alemán, ä se ordena antes que z
 console.log("ä".localeCompare("z", "sv")); // un valor positivo: en sueco, ä se ordena después que z
 
 
 
+// ************************ Secuencias de escape o Notación de escape ****************************
 
-
-
-// Secuencias de escape o Notación de escape
 let saludar = "Hola \n Daniel como estás \'Amigo\' \nMi nombre es \\ Gloria \\ \"Cabeza de Bolo\" Jejejej \r y tu? \v tabulacion vertical \t jejjeej \f ijijjiji \ud83d";
 console.log(saludar);
 
@@ -135,17 +131,39 @@ let bye = "Adios amigo" +
 
 
 
+// ******************** String.fromCharCode() ********************************
 
-// String.fromCharCode() 
 // Devuelve una cadena creada de valores Unicode.
 console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
 
-//string.raw
+
+
+// ******************** string.raw **************************
+
 //Devuleve cadenas en crudo, sin procesar
 
-let name = "Daniel";
-let full = String.raw`Hola\n${name}\\ como estás \"`;
+let name1 = "Daniel";
+let full = String.raw `Hola\n${name1}\\ como estás \"`;
 /* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
 ni agrega comillas, todo lo pasa literal. */
 
-console.log(full); //Salida: Hola\n${name}\\ como estás \"
+console.log(full); //Salida: Hola\nDaniel\\ como estás \"
+
+
+
+// **************** .match() ***************
+
+//Devuelve un array que contiene todas las coincidencias encontradas dentro de un string apartir de una Expresion Regula
+
+let fraseThree = "Hola mi nombre es Optimus Prime, comandante de los 'Autobots'"
+const expresionReg = /[A-Z]/g;
+let resultMatch = fraseThree.match(expresionReg); //devuelve todas (/g) las mayusculas de la A-Z 
+console.log(resultMatch);
+
+const expresionReg2 = /[A-Z]/;
+let resultMatch2 = fraseThree.match(expresionReg2); //devuelve la primer mayuscula entre la A-Z, su index, el input y el grupo
+console.log(resultMatch2)
+
+
+
+// ***************** normalice() ****************
