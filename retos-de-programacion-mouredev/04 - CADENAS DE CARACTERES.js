@@ -144,7 +144,7 @@ console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
 //Devuleve cadenas en crudo, sin procesar
 
 let name = "Daniel";
-let full = String.raw `Hola\n${name}\\ como estás \"`;
+let full = String.raw`Hola\n${name}\\ como estás \"`;
 /* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
 ni agrega comillas, todo lo pasa literal. */
 
