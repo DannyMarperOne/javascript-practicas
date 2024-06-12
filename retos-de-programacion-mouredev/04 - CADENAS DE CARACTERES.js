@@ -93,6 +93,28 @@ console.log(posicion); //Salida: -1 (Cuando ya no encontra más posiciones en el
 
 
 
+// ********************* localeCompare() *******************
+
+//Sirve para hacer comparaciones entre cadenas de texto dependiento el alfabeto
+let palabra1 = "manzana";
+let palabra2 = "banana";
+
+let resultado = palabra2.localeCompare(palabra1);
+console.log(resultado); //Salida: -1
+let resultado2 = palabra1.localeCompare(palabra2);
+console.log(resultado2); //Salida: 1
+/* Nota: entiendo que la cadena que está antes del localCompare es el dato a comparar, 
+y este manda si el resultado es -1,1 o 0 (Si va antes des de lo que está entre parentesis o después) */
+
+let nombres = ["Pedro", "Ana", "Juan"];
+nombres.sort((a, b) => a.localeCompare(b)); //Ocupamos sort para ordenar un arreglo y con localCompare le decimos que lo ordene alfabeticamente.
+console.log(nombres);
+
+
+//Se puede especificar el idioma en el que se requiere hacer la comparación
+console.log("ä".localeCompare("z", "de")); // un valor negativo: en alemán, ä se ordena antes que z
+console.log("ä".localeCompare("z", "sv")); // un valor positivo: en sueco, ä se ordena después que z
+
 
 
 
@@ -122,10 +144,8 @@ console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
 //Devuleve cadenas en crudo, sin procesar
 
 let name = "Daniel";
-let full = String.raw`Hola\n${name}\\ como estás \"`;
+let full = String.raw `Hola\n${name}\\ como estás \"`;
 /* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
 ni agrega comillas, todo lo pasa literal. */
 
 console.log(full); //Salida: Hola\n${name}\\ como estás \"
-
-
