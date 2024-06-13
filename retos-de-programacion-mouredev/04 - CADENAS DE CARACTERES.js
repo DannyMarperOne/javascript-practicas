@@ -166,4 +166,66 @@ console.log(resultMatch2)
 
 
 
-// ***************** normalice() ****************
+// ***************** padEnd() ****************
+
+//Este metodo rellena un string con el string que nosotros proporciones colocando el index en el maxlenght que deseemos
+let phraseEnd = "Esta frase termina con * apartir de aqui ";
+let padExample = phraseEnd.padEnd(55, "*");
+console.log(padExample);
+//Si el maxLength es menor o igual al string, devolverá el string tal cual fue declarado.
+console.log(phraseEnd.padEnd(10, "Repeat"));
+// Si solo se coloca el maxLength sin el fillString como resultado por defecto es rellenar las posiciones con " ".
+console.log(phraseEnd.padEnd(60));
+console.log(phraseEnd.padEnd(60, "Repeat"));
+
+
+
+// ***************** padStart() ****************
+
+//Este metodo rellena un string con el string que nosotros proporciones colocando el index en el maxlenght que deseemos
+//pero rellenará desde el principio del string original
+
+//las condiciones de uso son las mismas que las de padEnd()
+let phraseStart = "Esta frase empieza con *.";
+console.log(phraseStart.padStart(40, "*"));
+
+
+// ***************** repeat() ****************
+
+//Repite un string la cantidad de veces necesarias (Solo numeros enteros)
+console.log("hola".repeat(10));
+console.log("hola".repeat(10)); // RangeError
+console.log("abc".repeat(0)); // ''
+
+
+
+// ***************** replace() ****************
+
+// Reemplaza un string completo, buscando una coincidencia y cambiandola por otro string
+console.log("viva mexico cabrones".replace("cabrones", "******"));
+//Se pueden utilizar expresiones regulare
+let expRegReplace = /comer/i;
+console.log("Es hora de ir a comer".replace(expRegReplace, "Dormir"));
+
+const re = /apples/gi;
+const str = "Apples are round, and apples are juicy.";
+const newstr = str.replace(re, "oranges");
+console.log(newstr); // orange are round, and oranges are juicy.
+
+const ree = /(\w+)\s(\w+)/;
+const stre = "Maria Cruz";
+const newstre = stre.replace(ree, "$2, $1");
+console.log(newstre); // Cruz, Maria
+
+
+
+function f2c(x) {
+    function convert(str, p1, offset, s) {
+        return `${((p1 - 32) * 5) / 9}C`;
+    }
+    const s = String(x);
+    const test = /(-?\d+(?:\.\d*)?)F\b/g;
+    return s.replace(test, convert);
+}
+
+console.log(f2c("20F"));
