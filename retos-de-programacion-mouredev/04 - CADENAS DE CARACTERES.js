@@ -207,25 +207,49 @@ console.log("viva mexico cabrones".replace("cabrones", "******"));
 let expRegReplace = /comer/i;
 console.log("Es hora de ir a comer".replace(expRegReplace, "Dormir"));
 
+// Ejemplo
 const re = /apples/gi;
 const str = "Apples are round, and apples are juicy.";
 const newstr = str.replace(re, "oranges");
 console.log(newstr); // orange are round, and oranges are juicy.
 
+// Ejemplo
 const ree = /(\w+)\s(\w+)/;
 const stre = "Maria Cruz";
 const newstre = stre.replace(ree, "$2, $1");
 console.log(newstre); // Cruz, Maria
 
+//Ejemplo: Uso de parametros match, p1, offset, string
+function replacer(match, p1, offset, string) {
+    console.log(`match: ${match}`); // La coincidencia completa
+    console.log(`p1: ${p1}`); // El primer grupo de captura
+    console.log(`offset: ${offset}`); // La posición en la cadena donde se encuentra la coincidencia
+    console.log(`string: ${string}`); // La cadena original completa
+    return p1.toUpperCase(); // Ejemplo de transformación
+}
+const regex = /(\w+)\s/;
+const strr = "Hello world!";
+const newStr = strr.replace(regex, replacer);
+console.log(newStr);
 
-
+//Ejemplo: Remplace con RegEx
 function f2c(x) {
     function convert(str, p1, offset, s) {
         return `${((p1 - 32) * 5) / 9}C`;
     }
     const s = String(x);
-    const test = /(-?\d+(?:\.\d*)?)F\b/g;
+    const test = /(-?\d+(?:\.\d*)?)F\b/ig;
     return s.replace(test, convert);
 }
+console.log(f2c("En mexico estamos a 100F y en alaska estan a -3f"));
 
-console.log(f2c("20F"));
+//Ejemplo
+console.log("bc abcd abcssssss sas".replace(/(bc)/, (match, p1, offset) => `${match} (${offset}) -`));
+
+//Ejemplo Dificil
+function addOffset(match, ...args) {
+    const hasNamedGroups = typeof args.at(-1) === "object";
+    const offset = hasNamedGroups ? args.at(-3) : args.at(-2);
+    return `${match} (${offset}) `;
+}
+console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
