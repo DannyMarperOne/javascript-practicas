@@ -201,9 +201,11 @@ console.log("abc".repeat(0)); // ''
 
 // ***************** replace() ****************
 
+//Cualquier cosa que no sea un texto o un regex, este lo convierte en string
+
 // Reemplaza un string completo, buscando una coincidencia y cambiandola por otro string
 console.log("viva mexico cabrones".replace("cabrones", "******"));
-//Se pueden utilizar expresiones regulare
+//Se pueden utilizar expresiones regulares
 let expRegReplace = /comer/i;
 console.log("Es hora de ir a comer".replace(expRegReplace, "Dormir"));
 
@@ -253,3 +255,8 @@ function addOffset(match, ...args) {
     return `${match} (${offset}) `;
 }
 console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
+
+
+// ***************** replaceAll() ****************
+
+//Basicamente hace lo mismo que remplace() pero en lugar de remplazar un solo valor, este remplaza todas las ocurrencias
