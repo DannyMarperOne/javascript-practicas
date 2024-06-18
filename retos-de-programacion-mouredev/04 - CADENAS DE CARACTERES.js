@@ -103,7 +103,7 @@ console.log(resultado); //Salida: -1
 let resultado2 = palabra1.localeCompare(palabra2);
 console.log(resultado2); //Salida: 1
 /* Nota: entiendo que la cadena que está antes del localCompare es el dato a comparar, 
-y este manda si el resultado es -1,1 o 0 (Si va antes des de lo que está entre parentesis o después) */
+y este manda si el resultado es -1,1 o 0 (Si va antes de lo que está entre parentesis o después) */
 
 let nombres = ["Pedro", "Ana", "Juan"];
 nombres.sort((a, b) => a.localeCompare(b)); //Ocupamos sort para ordenar un arreglo y con localCompare le decimos que lo ordene alfabeticamente.
@@ -259,4 +259,107 @@ console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
 
 // ***************** replaceAll() ****************
 
-//Basicamente hace lo mismo que remplace() pero en lugar de remplazar un solo valor, este remplaza todas las ocurrencias
+//Basicamente hace lo mismo que remplace() pero en lugar de remplazar un solo valor, este remplaza todas las ocurrencias.
+//Cuando se utliza con RegEx es necesario que este último lleve el valor global (g) ya que de lo contrario marcará error.
+
+
+
+// ***************** search() ****************
+
+//Solo funciona con expreciones regulares, busca una ocurrencia respecto a una expresión regular
+function testinput(re, str) {
+    var midstring;
+    if (str.search(re) != -1) {
+        midstring = " contains ";
+    } else {
+        midstring = " does not contain ";
+    }
+    console.log(str + midstring + re);
+}
+/* let exp = /\hola/g;
+let text = "hola a todos, hola.";
+testinput(exp, text); */
+
+testinput(/\hola/g, "hola a todos, hola.");
+
+
+
+// ***************** slice() ****************
+
+//Extrae un trozo de una cadena, eligiendo desde que indice de inicio hasta el indice final, y crea una nueva cadean.
+//desde el inicio se cuenta desde el indice 0 y el final desde el indice -1
+
+var cadena1 = "La mañana se nos echa encima.";
+var cadena2 = cadena1.slice(3, -4);
+console.log(cadena2);
+
+var cad = "La mañana se nos echa encima.";
+cad.slice(-3); // retorna 'ma.'
+cad.slice(-3, -1); // retorna 'ma'
+cad.slice(0, -1); // retorna 'La mañana se nos echa encima'
+
+/* 
+slice(startIndex, endIndex): Extrae desde startIndex hasta endIndex, pero sin incluir endIndex.
+slice(startIndex): Extrae desde startIndex hasta el final de la cadena.
+Índices negativos: Los índices negativos cuentan desde el final de la cadena hacia atrás. 
+*/
+
+// ***************** split() ****************
+
+//Delvuelve un arreglo apartir de una cadena. Donde encuentre el separador, ahí delimita un elemento del arreglo.
+
+//Ejemplo
+function dividirCadena(cadenaADividir, separador) {
+    var arrayDeCadenas = cadenaADividir.split(separador);
+    document.write('<p>La cadena original es: "' + cadenaADividir + '"');
+    document.write('<br>El separador es: "' + separador + '"');
+    document.write("<br>El array tiene " + arrayDeCadenas.length + " elementos: ", );
+
+    for (var i = 0; i < arrayDeCadenas.length; i++) {
+        document.write(arrayDeCadenas[i] + " / ");
+    }
+}
+
+var cadenaVerso = "Oh brave new world that has such people in it.";
+var cadenaMeses = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
+
+var espacio = " "; //donde encuentre espacio separa
+var coma = ","; //donde encuentre una coma separa
+
+dividirCadena(cadenaVerso, espacio);
+dividirCadena(cadenaVerso);
+dividirCadena(cadenaMeses, coma);
+
+/*
+La cadena original es: "Oh brave new world that has such people in it."
+El separador es: " "
+El array tiene 10 elementos: Oh / brave / new / world / that / has / such / people / in / it. /
+
+La cadena original es: "Oh brave new world that has such people in it."
+El separador es: "undefined"
+El array tiene 1 elementos: Oh brave new world that has such people in it. /
+
+La cadena original es: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+El separador es: ","
+El array tiene 12 elementos: Jan / Feb / Mar / Apr / May / Jun / Jul / Aug / Sep / Oct / Nov / Dec /
+*/
+
+//Ejemplo
+function slplitCadena(cadenita, separadores) {
+    let pruebaSplit = cadenita.split(separadores);
+    console.log(pruebaSplit);
+    console.log(pruebaSplit.length);
+}
+
+let cadenaSp = "Hola, muchas gracias, por estar aqui, bye."
+let sepa = ",";
+
+slplitCadena(cadenaSp, sepa);
+
+//Ejemplo
+var strt = "asdfghjkl"; // Original string
+var strReverse = strt.split("") // Step 1: Split into characters
+    .reverse() // Step 2: Reverse the array
+    .join(""); // Step 3: Join the characters into a string
+
+console.log(strReverse); // Output: "lkjhgfdsa"
