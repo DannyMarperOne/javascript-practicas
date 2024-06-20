@@ -286,12 +286,12 @@ testinput(/\hola/g, "hola a todos, hola.");
 
 // ***************** slice() ****************
 
-//Extrae un trozo de una cadena, eligiendo desde que indice de inicio hasta el indice final, y crea una nueva cadean.
+//Extrae un trozo de una cadena, eligiendo desde que indice de inicio hasta el indice final, y crea una nueva cadena.
 //desde el inicio se cuenta desde el indice 0 y el final desde el indice -1
 
 var cadena1 = "La mañana se nos echa encima.";
 var cadena2 = cadena1.slice(3, -4);
-console.log(cadena2);
+console.log(cadena2); // retorna 'mañana se nos echa enc'
 
 var cad = "La mañana se nos echa encima.";
 cad.slice(-3); // retorna 'ma.'
@@ -303,6 +303,8 @@ slice(startIndex, endIndex): Extrae desde startIndex hasta endIndex, pero sin in
 slice(startIndex): Extrae desde startIndex hasta el final de la cadena.
 Índices negativos: Los índices negativos cuentan desde el final de la cadena hacia atrás. 
 */
+
+
 
 // ***************** split() ****************
 
@@ -363,3 +365,58 @@ var strReverse = strt.split("") // Step 1: Split into characters
     .join(""); // Step 3: Join the characters into a string
 
 console.log(strReverse); // Output: "lkjhgfdsa"
+
+
+// ***************** startsWith() ****************
+
+//Devuelve true or false si una cadena comienza con ciertos caracteres
+let palabraStarsWith = "Tengo frio ahorita mismo. Mañana no creo.";
+let iniciaCon = palabraStarsWith.startsWith("Ten");
+let inciciaCon2 = palabraStarsWith.startsWith("Ten", 1);
+console.log(iniciaCon, inciciaCon2);
+//Toma en cuenta los puntos finales
+let puntoFinal = palabraStarsWith.startsWith("Ma", 26);
+console.log(puntoFinal);
+
+
+
+// ***************** substring() ****************
+
+//Devuleve un subconjunto de cadena apartir de el indice de inicio e indice fin.
+//Si el indice final es mayor al indice inicial, substring lo invierte (el indice menor siempre lo toma como indice a)
+var cualquierCadena = "Mozilla";
+
+// Muestra "Moz"
+console.log(cualquierCadena.substring(0, 3));
+console.log(cualquierCadena.substring(3, 0));
+// Muestra "lla"
+console.log(cualquierCadena.substring(4, 7));
+console.log(cualquierCadena.substring(7, 4));
+// Muestra "Mozill"
+console.log(cualquierCadena.substring(0, 6));
+console.log(cualquierCadena.substring(6, 0));
+//Devuelve cadena vacia porque el indiceA es igual al indiceB
+console.log(cualquierCadena.substring(1, 1));
+//Devuelve desde el indiceA hasta el length de la cadena. Ya queno se asigna indiceB
+console.log(cualquierCadena.substring(1));
+
+
+
+
+
+function reemplazarCadena(cadenaVieja, cadenaNueva, cadenaCompleta) {
+    // Reemplaza cadenaVieja por cadenaNueva en cadenaCompleta
+
+    for (var i = 0; i < cadenaCompleta.length; i++) {
+        if (cadenaCompleta.substring(i, i + cadenaVieja.length) == cadenaVieja) {
+            cadenaCompleta =
+                cadenaCompleta.substring(0, i) +
+                cadenaNueva +
+                cadenaCompleta.substring(i + cadenaVieja.length, cadenaCompleta.length);
+        }
+    }
+    console.log(cadenaCompleta)
+    return cadenaCompleta;
+}
+
+reemplazarCadena("Mundo", "Web", "Bravo Nuevo Mundo");
