@@ -143,7 +143,7 @@ console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
 //Devuleve cadenas en crudo, sin procesar
 
 let name1 = "Daniel";
-let full = String.raw `Hola\n${name1}\\ como estás \"`;
+let full = String.raw`Hola\n${name1}\\ como estás \"`;
 /* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
 ni agrega comillas, todo lo pasa literal. */
 
@@ -315,7 +315,7 @@ function dividirCadena(cadenaADividir, separador) {
     var arrayDeCadenas = cadenaADividir.split(separador);
     document.write('<p>La cadena original es: "' + cadenaADividir + '"');
     document.write('<br>El separador es: "' + separador + '"');
-    document.write("<br>El array tiene " + arrayDeCadenas.length + " elementos: ", );
+    document.write("<br>El array tiene " + arrayDeCadenas.length + " elementos: ",);
 
     for (var i = 0; i < arrayDeCadenas.length; i++) {
         document.write(arrayDeCadenas[i] + " / ");
@@ -416,3 +416,117 @@ function reemplazarCadena(cadenaVieja, cadenaNueva, cadenaCompleta) {
     return cadenaCompleta;
 }
 reemplazarCadena("Mundo", "Web", "Bravo Nuevo Mundo");
+
+
+
+// ***************** toLowerCase() ****************
+//Si una cadena contiene caracteres en mayusculas, este método lo devulve en minusculas
+
+let ejemploLowerUpperCase = "HOLA A TODOS mi nombre es Daniel";
+console.log(ejemploLowerUpperCase.toLowerCase()); //hola a todos mi nombre es daniel
+
+
+// ***************** toUpperCase() ****************
+//Si una cadena contiene caracteres en minusculas, este método lo devulve en mayusculas
+console.log(ejemploLowerUpperCase.toUpperCase());
+
+
+
+// ***************** toString() ****************
+// Es utilizado para convertir un objeto a su representación en forma de cadena de texto.
+let tex = "Hola"
+console.log(tex.toString); //"Hola"
+let num = 123;
+console.log(num.toString); //"123"
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.toString()); // "1,2,3,4,5"
+let obj = { a: 1, b: 2 };
+console.log(obj.toString()); // "[object Object]"
+
+//Ejemplo
+function Perro(nombre, criadero, color, sexo) {
+    this.nombre = nombre;
+    this.criadero = criadero;
+    this.color = color;
+    this.sexo = sexo;
+}
+
+let elPerro = new Perro("Gabby", "Laboratorio", "chocolate", "femenino");
+Perro.prototype.toString = function perroToString() {
+    var retorno = `El perro ${this.nombre} es del sexo ${this.sexo}, tiene un color ${this.color} y fue criado en un ${this.criadero}`;
+    return console.log(retorno);
+};
+
+console.log(elPerro.toString());
+// El perro Gabby es del sexo femenino, tiene un color chocolate y fue criado en un Laboratorio          undefined
+
+
+
+// ***************** trim() ****************
+
+//Elimina los espacios de ambos extremos de una cadena
+let ejemploTrim = "       Cadena de ejemplo con trim       "
+console.log(ejemploTrim.trim());
+
+//Ejemplo
+let jaja = `Elimina los espacios de ejemlo trim, ${ejemploTrim.trim()}, al final tambien lo elimina.`;
+console.log(jaja);
+
+
+
+// ***************** trimStart() ****************
+//Elimina los espacios que estén solo al inicio de una cadena
+console.log(ejemploTrim.trimStart());
+
+
+
+// ***************** trimEnd() ****************
+//Elimina los espacios que estén solo al final de una cadena
+console.log(ejemploTrim.trimEnd());
+
+
+
+// ***************** valueOf() ****************
+//Delvuelve el valor primitivo de un objeto string
+
+cadena = new String("Hello world");
+console.log(cadena.valueOf()); // Displays "Hello world"
+
+//Practicamente con las cadenas de texto es lo mismo que colocar
+console.log(cadena.toString());
+
+
+
+// ******************* [Symbol.iterator](); *******************
+
+const strg = "The quick red fox jumped over the lazy dog's back.";
+
+const iterator = strg[Symbol.iterator]();
+let theChar = iterator.next();
+
+while (!theChar.done && theChar.value !== '') {
+    console.log(theChar.value);
+    theChar = iterator.next();
+    // Expected output: "T"
+    //                  "h"
+    //                  "e"
+}
+
+//Ejemplo Manual
+
+const strig = "Daniel Martinez";
+const strIter = strig[Symbol.iterator]();
+
+console.log(strIter.next().value); // "D"
+console.log(strIter.next().value); // "a"
+console.log(strIter.next().value); // "n"
+
+
+/* 
+DIFICULTAD EXTRA (opcional):
+ * Crea un programa que analice dos palabras diferentes y realice comprobaciones
+ * para descubrir si son:
+ * - Palíndromos
+ * - Anagramas
+ * - Isogramas 
+ * */
