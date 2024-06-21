@@ -400,10 +400,7 @@ console.log(cualquierCadena.substring(1, 1));
 //Devuelve desde el indiceA hasta el length de la cadena. Ya queno se asigna indiceB
 console.log(cualquierCadena.substring(1));
 
-
-
-
-
+//Ejemplo
 function reemplazarCadena(cadenaVieja, cadenaNueva, cadenaCompleta) {
     // Reemplaza cadenaVieja por cadenaNueva en cadenaCompleta
 
@@ -412,11 +409,10 @@ function reemplazarCadena(cadenaVieja, cadenaNueva, cadenaCompleta) {
             cadenaCompleta =
                 cadenaCompleta.substring(0, i) +
                 cadenaNueva +
-                cadenaCompleta.substring(i + cadenaVieja.length, cadenaCompleta.length);
+                cadenaCompleta.substring(i + cadenaVieja.length, cadenaCompleta.length); //retorna cadena vacia
         }
     }
     console.log(cadenaCompleta)
     return cadenaCompleta;
 }
-
 reemplazarCadena("Mundo", "Web", "Bravo Nuevo Mundo");
