@@ -61,11 +61,11 @@ concat(isnull(round(((((rend.empa_175+rend.rpc_175+nullif(rend.manual_175,0))/N.
 concat(isnull(round(((rend.empa_150+nullif(rend.manual_150,0)/N.KILOS)*100),2),0),'%') as 'p_e_150',
 concat(isnull(round(((rend.empa_110+nullif(rend.manual_110,0)/N.KILOS)*100),2),0),'%') as 'p_e_110',
 
-isnull(round(rend.empa_250 +rend.empa_230+rend.empa_200+rend.empa_175+rend.empa_150 +rend.empa_110+(rend.manual_250+rend.manual_230+rend.manual_200+rend.manual_175+rend.manual_150+rend.manual_110)
-+rend.metro_kilos_aprovechados+rend.rpc_250+rend.rpc_230+rend.rpc_200+rend.rpc_175,2),0) as 'T.Emp',
+round(isnull(rend.empa_250,0) + isnull(rend.empa_230,0) + isnull(rend.empa_200,0) + isnull(rend.empa_175,0) + isnull(rend.empa_150,0) + isnull(rend.empa_110,0) + isnull(rend.manual_250,0) + isnull(rend.manual_230,0) + isnull(rend.manual_200,0) + isnull(rend.manual_175,0) + isnull(rend.manual_150,0) + isnull(rend.manual_110, 0)
++ isnull(rend.metro_kilos_aprovechados,0) + isnull(rend.rpc_250,0) + isnull(rend.rpc_230,0) + isnull(rend.rpc_200,0) + isnull(rend.rpc_175,0),2) as 'T.Emp',
 
-concat(isnull(round(((rend.empa_250 +rend.empa_230+rend.empa_200+rend.empa_175+rend.empa_150 +rend.empa_110+rend.rpc_250+rend.rpc_230+rend.rpc_200+rend.rpc_175+
-(rend.manual_250+rend.manual_230+rend.manual_200+rend.manual_175+rend.manual_150+rend.manual_110)) /n.kilos) *100,2),0),'%') as 't_p_emp',
+concat(round(((isnull(rend.empa_250,0) +isnull(rend.empa_230,0)+ isnull(rend.empa_200,0)+ isnull(rend.empa_175,0)+ isnull(rend.empa_150,0)+isnull(rend.empa_110,0)+ isnull(rend.rpc_250,0)+ isnull(rend.rpc_230,0) + isnull(rend.rpc_200,0)+isnull(rend.rpc_175)+
+(isnull(rend.manual_250,0)+isnull(rend.manual_230,0)+isnull(rend.manual_200,0)+isnull(rend.manual_175,0)+isnull(rend.manual_150,0)+isnull(rend.manual_110,0))) /n.kilos) *100,2),'%') as 't_p_emp',
 
 
 -- Segundas--------------------------------------------------------------------------------------------------------------
@@ -84,45 +84,44 @@ concat(isnull(round((nullif(rend.seg_175,0))/(N.KILOS )*100,2),0),'%') as ps_175
 concat(isnull(round((nullif(rend.seg_150,0))/(N.KILOS )*100,2),0),'%') as ps_150,
 concat(isnull(round((nullif(rend.seg_110,0))/(N.KILOS )*100,2),0),'%') as ps_110,
 
-round((isnull(rend.seg_250 +rend.seg_230+rend.seg_200+rend.seg_175+rend.seg_150+rend.seg_110,0) ),2) as 'Total_s',
+round((isnull(rend.seg_250,0) +isnull(rend.seg_230,0)+isnull(rend.seg_200,0)+isnull(rend.seg_175,0)+isnull(rend.seg_150,0)+isnull(rend.seg_110,0)),2) as 'Total_s',
 concat(round((nullif (rend.seg_250,0) +nullif(rend.seg_230,0)+nullif(rend.seg_200,0)+nullif(rend.seg_175,0)+nullif(rend.seg_150,0)+nullif(rend.seg_110,0))/(n.kilos)*100 ,2),'%') as 't_p_s',
 
 -- Calibres General------------------------------------------------------------------------------------------------------
 
-concat(isnull( round(((rend.verde_250+rend.empa_250+rpc_250+ rend.seg_250+rend.manual_250)/n.kilos)*100,2),0),'%') as 'pg_250',
-concat(isnull( round(((rend.verde_230+rend.empa_230+ rend.seg_230+rend.rpc_230+rend.manual_230)/n.kilos)*100,2),0),'%') as 'pg_230',
-concat(isnull( round(((rend.verde_200+rend.empa_200+ rend.seg_200+rend.rpc_200+rend.manual_200)/n.kilos)*100,2),0),'%') as 'pg_200',
-concat(isnull( round(((rend.verde_175+rend.empa_175+ rend.seg_175+rend.rpc_175+rend.manual_175)/n.kilos)*100,2),0),'%') as 'pg_175',
-concat(isnull( round(((rend.verde_150+rend.empa_150+ rend.seg_150+rend.manual_150)/n.kilos)*100,2),0),'%') as 'pg_150',
-concat(isnull( round(((rend.verde_110+rend.empa_110+ rend.seg_110+rend.manual_110)/n.kilos)*100,2),0),'%') as 'pg_110',
+concat(round(((isnull(rend.verde_250,0)+isnull(rend.empa_250,0)+rpc_250+ rend.seg_250+rend.manual_250)/n.kilos)*100,2),'%') as 'pg_250',
+concat(round(((isnull(rend.verde_230,0)+isnull(rend.empa_230,0)+isnull(rend.seg_230,0)+isnull(rend.rpc_230,0)+isnull(rend.manual_230,0))/n.kilos)*100,2),'%') as 'pg_230',
+concat(round(((isnull(rend.verde_200,0)+isnull(rend.empa_200,0)+isnull(rend.seg_200,0)+isnull(rend.rpc_200,0)+isnull(rend.manual_200,0))/n.kilos)*100,2),'%') as 'pg_200',
+concat(round(((isnull(rend.verde_175,0)+isnull(rend.empa_175,0)+isnull(rend.seg_175,0)+isnull(rend.rpc_175,0)+isnull(rend.manual_175,0))/n.kilos)*100,2),'%') as 'pg_175',
+concat(round(((isnull(rend.verde_150,0)+isnull(rend.empa_150,0)+isnull(rend.seg_150,0)+isnull(rend.manual_150,0))/n.kilos)*100,2),'%') as 'pg_150',
+concat(round(((isnull(rend.verde_110,0)+isnull(rend.empa_110,0)+isnull(rend.seg_110,0)+isnull(rend.manual_110,0))/n.kilos)*100,2),'%') as 'pg_110',
 
-concat(round(isnull(((
-(rend.verde_250 +rend.verde_230+rend.verde_200+rend.verde_175+rend.verde_150+rend.verde_110 )+
-(rend.empa_250 +rend.empa_230+rend.empa_200+rend.empa_175+rend.empa_150 +rend.empa_110)+
-(rend.seg_250 +rend.seg_230+rend.seg_200+rend.seg_175+rend.seg_150+rend.seg_110+rend.rpc_250+rend.rpc_230+rend.rpc_200+rend.rpc_175 )+
-(rend.manual_250+rend.manual_230+rend.manual_200+rend.manual_175+rend.manual_150+rend.manual_110)
+concat(round(((
+(isnull(rend.verde_250,0) + isnull(rend.verde_230,0)+isnull(rend.verde_200,0)+isnull(rend.verde_175,0)+isnull(rend.verde_150,0)+isnull(rend.verde_110))+
+(isnull(rend.empa_250,0) +isnull(rend.empa_230,0)+isnull(rend.empa_200,0)+isnull(rend.empa_175,0)+isnull(rend.empa_150,0) +isnull(rend.empa_110,0))+
+(isnull(rend.seg_250,0) +isnull(rend.seg_230,0)+isnull(rend.seg_200,0)+isnull(rend.seg_175,0)+isnull(rend.seg_150,0)+isnull(rend.seg_110,0)+isnull(rend.rpc_250,0)+isnull(rend.rpc_230,0)+isnull(rend.rpc_200,0)+isnull(rend.rpc_175,0) )+
+(isnull(rend.manual_250,0)+isnull(rend.manual_230,0)+isnull(rend.manual_200,0)+isnull(rend.manual_175,0)+isnull(rend.manual_150,0)+isnull(rend.manual_110,0))
+)/n.kilos)*100,2),'%') as 'total_calibres',
 
-)/n.kilos)*100,0),2),'%') as 'total_calibres',
-
-concat(isnull(round(   ( (nal.podrido /n.kilos) *100),3),0),'%') as 'p_podrido',
-concat(round   (((nal.terceras/n.kilos) *100),3),'%') as 'p_terceras' ,
+concat(isnull(round(( (nal.podrido /n.kilos) *100),3),0),'%') as 'p_podrido',
+concat(round(((nal.terceras/n.kilos) *100),3),'%') as 'p_terceras' ,
 concat(isnull(round(((nal.torreon /n.kilos) *100),3),0),'%') as 'p_torreon',
-concat(isnull(round(   (((rend.kilos_segundas+rend.desecho_rpc+nal.limon_rama)/n.kilos) *100),3),0),'%') as 'segundas_enceradas',
-concat(isnull(round(   (((rend.torreon_encerado+rend.torreon_275)/n.kilos) *100),3),0),'%') as 'p_torreon_encerado',
+concat(isnull(round((((rend.kilos_segundas+rend.desecho_rpc+nal.limon_rama)/n.kilos) *100),3),0),'%') as 'segundas_enceradas',
+concat(isnull(round((((rend.torreon_encerado+rend.torreon_275)/n.kilos) *100),3),0),'%') as 'p_torreon_encerado',
 
-concat(isnull(round((nal.terceras+(rend.kilos_segundas+rend.desecho_rpc+nal.limon_rama)+nal.torreon+rend.torreon_encerado+torreon_275+nal.podrido+(rend.diferencia)+
+concat(round((isnull(nal.terceras,0)+(isnull(rend.kilos_segundas,0)+isnull(rend.desecho_rpc,0)+isnull(nal.limon_rama,0))+isnull(nal.torreon,0)+isnull(rend.torreon_encerado,0)+isnull(torreon_275,0)+isnull(nal.podrido,0)+(isnull(rend.diferencia,0))+
 (((100-rend.metro_porcentaje_aprovechado)/100 ) 
-*((rend.metro_rejas_175 +rend.metro_rejas_150) *26) ) )/isnull(n.kilos,0)*100 ,2),0),'%') as 't_p_nal',
+*((rend.metro_rejas_175 +rend.metro_rejas_150) *26)))/isnull(n.kilos,0)*100 ,2),'%') as 't_p_nal',
 
 isnull(round(rend.diferencia,2),0) as DIFERENCIA,
-concat(isnull(round((  (rend.diferencia /isnull(n.kilos,0)) *100),3),0),'%') as 'p_merma',
+concat(isnull(round(((rend.diferencia /isnull(n.kilos,0)) *100),3),0),'%') as 'p_merma',
 
-concat(round(((n.devolucion_nal+
-nal.terceras+rend.kilos_segundas+rend.desecho_rpc+nal.limon_rama+nal.torreon+rend.torreon_encerado+torreon_275+nal.podrido+
-rend.seg_250 +rend.seg_230+rend.seg_200+rend.seg_175+rend.seg_150+rend.seg_110)/n.kilos_entrada )*100,2),' %')
+concat(round(((isnull(n.devolucion_nal,0)+
+isnull(nal.terceras,0)+isnull(rend.kilos_segundas,0)+isnull(rend.desecho_rpc,0)+isnull(nal.limon_rama,0)+isnull(nal.torreon,0)+isnull(rend.torreon_encerado,0)+isnull(torreon_275,0)+isnull(nal.podrido,0)+
+isnull(rend.seg_250,0)+isnull(rend.seg_230,0)+isnull(rend.seg_200,0)+isnull(rend.seg_175,0)+isnull(rend.seg_150,0)+isnull(rend.seg_110))/n.kilos_entrada )*100,2),' %')
 as 'Total de kilos nal en porcentajes',
 
-concat(isnull(round(((( rend.empa_250 +rend.empa_230+rend.empa_200+rend.empa_175+rend.empa_150 +rend.empa_110+rend.rpc_250+rend.rpc_230+rend.rpc_200+rend.rpc_175)/n.kilos)*100),0),0),'%') as  tpe_a,
+concat(round((((isnull(rend.empa_250,0) +isnull(rend.empa_230,0)+isnull(rend.empa_200,0)+isnull(rend.empa_175,0)+isnull(rend.empa_150,0)+isnull(rend.empa_110,0)+isnull(rend.rpc_250,0)+isnull(rend.rpc_230,0)+isnull(rend.rpc_200,0)+isnull(rend.rpc_175,0))/n.kilos)*100),0),'%') as  tpe_a,
 
 rend.comentarios as COMENTARIOS ,
  rend.hora_fin_proceso as 'Hora '
