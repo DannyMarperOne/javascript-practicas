@@ -64,6 +64,12 @@ console.log(`La palabra ${piloto} ${frase.includes(piloto, 12)} está dentro de 
 
 
 
+//*************** startWhith() ************* */
+let fraseFour = "Arriba el futbol de Monterrey"
+console.log(`La primera palabra de la frase es Monterrey? ${fraseFour.startsWith('Arriba') ? 'SI' : 'NO'}`);
+console.log(`La última palabra de la frase es Monterrey? ${fraseFour.startsWith('Arriba', 3) ? 'SI' : 'NO'}`);
+
+
 //*************** endsWhith() ************* */
 
 let fraseTwo = "Arriba el futbol de Monterrey"
@@ -532,21 +538,34 @@ DIFICULTAD EXTRA (opcional):
  * */
 
 
-let fraseNumerOne = "oro";
-function palindromo() {
+/* function palindromo() {
     let space = " ";
     let deleteSpace = (fraseNumerOne.split(space))
     let joinArray = deleteSpace.join('')
+    console.log(joinArray);
     let lowerString = joinArray.toLowerCase();
     let nose = Array.from(lowerString)
+    console.log(nose);
     let noseArray = nose.toReversed();
-    let stringConvert = noseArray.toString();
-    if (fraseNumerOne == stringConvert) {
+    let deleteSpaceDos = noseArray.join('');
+    if (lowerString == deleteSpaceDos) {
         console.log(`La palabra ${fraseNumerOne} es un palindromo`);
-    } else {
-        console.log(`La palabra ${fraseNumerOne} no es un palindromo, vuelve a intentar!`)
-
+        } else {
+            console.log(`La palabra ${fraseNumerOne} no es un palindromo, vuelve a intentar!`)
+        
     }
-    console.log(stringConvert);
+    } */
+
+
+let firstWord = "ANITA LAVA LA TINA";
+function palindromo() {
+    let space = " ";
+    let deleteSpace = firstWord.split(space);
+    let joinWord = deleteSpace.join('').toLocaleLowerCase();
+    let arrayWord = Array.from(joinWord).toReversed().join('');
+    let result = arrayWord === joinWord ? `${firstWord} es un palindromo` : `${firstWord} no es un palindromo`;
+    console.log(result);
 }
 palindromo();
+
+let secondWord = "amor", thirdWord = "rama";
