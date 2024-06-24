@@ -313,12 +313,12 @@ slice(startIndex): Extrae desde startIndex hasta el final de la cadena.
 //Ejemplo
 function dividirCadena(cadenaADividir, separador) {
     var arrayDeCadenas = cadenaADividir.split(separador);
-    document.write('<p>La cadena original es: "' + cadenaADividir + '"');
-    document.write('<br>El separador es: "' + separador + '"');
-    document.write("<br>El array tiene " + arrayDeCadenas.length + " elementos: ",);
+    console.log('<p>La cadena original es: "' + cadenaADividir + '"');
+    console.log('<br>El separador es: "' + separador + '"');
+    console.log("<br>El array tiene " + arrayDeCadenas.length + " elementos: ",);
 
     for (var i = 0; i < arrayDeCadenas.length; i++) {
-        document.write(arrayDeCadenas[i] + " / ");
+        console.log(arrayDeCadenas[i] + " / ");
     }
 }
 
@@ -530,3 +530,23 @@ DIFICULTAD EXTRA (opcional):
  * - Anagramas
  * - Isogramas 
  * */
+
+
+let fraseNumerOne = "oro";
+function palindromo() {
+    let space = " ";
+    let deleteSpace = (fraseNumerOne.split(space))
+    let joinArray = deleteSpace.join('')
+    let lowerString = joinArray.toLowerCase();
+    let nose = Array.from(lowerString)
+    let noseArray = nose.toReversed();
+    let stringConvert = noseArray.toString();
+    if (fraseNumerOne == stringConvert) {
+        console.log(`La palabra ${fraseNumerOne} es un palindromo`);
+    } else {
+        console.log(`La palabra ${fraseNumerOne} no es un palindromo, vuelve a intentar!`)
+
+    }
+    console.log(stringConvert);
+}
+palindromo();
