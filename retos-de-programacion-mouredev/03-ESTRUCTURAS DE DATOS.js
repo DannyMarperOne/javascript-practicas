@@ -116,12 +116,13 @@ console.log(car2);
 
 //****************** Set ******************
 
-const setCreator = new Set([1, 2, 3, 4, 5]); //Cración de constructor Set
+const setCreator = new Set([1, 2, 3, 4, 5, 5]); //Cración de constructor Set
 
 // Has devuelve si un elemento pertenece o no al set
 console.log(setCreator.has(1)); //true
 console.log(setCreator.has(5)); //true
 console.log(setCreator.has(8)); //false
+console.log(setCreator);
 
 setCreator.add("Texto Libre"); //Agregar elemento a un set
 const objectSet = {

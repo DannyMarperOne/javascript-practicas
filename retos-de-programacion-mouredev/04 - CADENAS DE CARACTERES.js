@@ -556,7 +556,7 @@ DIFICULTAD EXTRA (opcional):
     }
     } */
 
-
+// Palindromos
 let firstWord = "ANITA LAVA LA TINA";
 function palindromo() {
     let space = " ";
@@ -568,17 +568,28 @@ function palindromo() {
 }
 palindromo();
 
-let secondWord = "mujer", thirdWord = "jermu";
+// Anagramas
+let secondWord = "daniel", thirdWord = "DanieL";
 function anagrama() {
-    secondWord = secondWord.toLowerCase();
-    thirdWord = thirdWord.toLowerCase();
-    let arrayS = secondWord.split("");
-    let arrayT = thirdWord.split("");
-    let ordenOne = arrayT.sort((a, b) => a.localeCompare(b));
-    let ordenTwo = arrayS.sort((a, b) => a.localeCompare(b));
-    let hola = ordenOne.join('');
-    let adios = ordenTwo.join('');
-    let result = hola === adios ? `La palabras ${secondWord} y ${thirdWord}, son anagramas` : `La palabras ${secondWord} y ${thirdWord}, no son anagramas`;
+    let arraySecondWord = secondWord.split('').sort((a, b) => a.localeCompare(b));
+    arraySecondWord = arraySecondWord.join('').toLowerCase();
+    let arrayThirWord = thirdWord.split('').sort((a, b) => a.localeCompare(b));
+    arrayThirWord = arrayThirWord.join('').toLowerCase();
+    let result = arraySecondWord === arrayThirWord
+        ? `La palabras ${secondWord} y ${thirdWord}, son anagramas`
+        : `La palabras ${secondWord} y ${thirdWord}, no son anagramas`;
     console.log(result);
 }
 anagrama();
+
+// Isogramas
+let fourthWord = "danny";
+let eje = fourthWord.split('');
+let hi = new Set(eje);
+if (hi === eje) {
+    console.log("Hola Papu");
+} else {
+    console.log("Adios Papu");
+}
+console.log(hi)
+
