@@ -583,13 +583,17 @@ function anagrama() {
 anagrama();
 
 // Isogramas
-let fourthWord = "danny";
+let fourthWord = "dasgeny";
 let eje = fourthWord.split('');
 let hi = new Set(eje);
-if (hi === eje) {
+
+const array = [];
+hi.forEach(v => array.push(v));
+let text1 = eje.join('');
+let text2 = array.join('');
+if (text1 === text2) {
     console.log("Hola Papu");
 } else {
     console.log("Adios Papu");
 }
-console.log(hi)
 
