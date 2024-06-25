@@ -561,11 +561,24 @@ let firstWord = "ANITA LAVA LA TINA";
 function palindromo() {
     let space = " ";
     let deleteSpace = firstWord.split(space);
-    let joinWord = deleteSpace.join('').toLocaleLowerCase();
+    let joinWord = deleteSpace.join('').toLowerCase();
     let arrayWord = Array.from(joinWord).toReversed().join('');
     let result = arrayWord === joinWord ? `${firstWord} es un palindromo` : `${firstWord} no es un palindromo`;
     console.log(result);
 }
 palindromo();
 
-let secondWord = "amor", thirdWord = "rama";
+let secondWord = "mujer", thirdWord = "jermu";
+function anagrama() {
+    secondWord = secondWord.toLowerCase();
+    thirdWord = thirdWord.toLowerCase();
+    let arrayS = secondWord.split("");
+    let arrayT = thirdWord.split("");
+    let ordenOne = arrayT.sort((a, b) => a.localeCompare(b));
+    let ordenTwo = arrayS.sort((a, b) => a.localeCompare(b));
+    let hola = ordenOne.join('');
+    let adios = ordenTwo.join('');
+    let result = hola === adios ? `La palabras ${secondWord} y ${thirdWord}, son anagramas` : `La palabras ${secondWord} y ${thirdWord}, no son anagramas`;
+    console.log(result);
+}
+anagrama();
