@@ -15,10 +15,47 @@
  * - Isogramas
  */
 
+//CONSTRUCTOR
 
-let player = "Cristiano Ronaldo"
+// ************** string() y new String() *******************
+
+//String() convierte un valor a cadena de texto y lo retorna como un valor primitivo.
+let numbers = 1234;
+let cadenaString = String(numbers); // "1234"
+console.log(typeof cadenaString); //string
+
+//new String() crea un objeto de tipo string, se utiliza como contructor, y devulve un objeto string
+let numb = 9874;
+let stringObj = new String(numb); //[String: '9874']
+console.log(typeof stringObj); // object
+
+
+
+
+
+// MÉTODOS ESTATICOS
+
+// ******************** String.raw **************************
+
+//Devuleve cadenas en crudo, sin procesar
+
+let name1 = "Daniel";
+let full = String.raw`Hola\n${name1}\\ como estás \"`;
+/* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
+ni agrega comillas, todo lo pasa literal. */
+console.log(full); //Salida: Hola\nDaniel\\ como estás \"
+
+
+
+
+
+//PROPIEDADES
 
 //*************  Longitud = Length  *****************
+
+//Devuelve la longitud de una cadena
+
+let player = "Cristiano Ronaldo"
 let cr7 = player.length;
 
 console.log(cr7) //Salida: 17
@@ -26,19 +63,27 @@ console.log('The name ' + player + ' has ' + player.length + ' characters'); //S
 
 
 
-//**************  charAt = Acceder a un solo caracter  ****************
-let escuderia = "Ferrari";
 
+
+//MÉTODOS
+
+//**************  charAt = Acceder a un solo caracter  ****************
+
+//Devuelve el valor de index al que se desea acceder
+
+let escuderia = "Ferrari";
 //Acceder a la posición del caracter
 console.log(escuderia.charAt(3)); //Salida: r
 //Acceder al último caracter del string
 console.log(escuderia.charAt(escuderia.length - 1)); //Salida: i
-
 //Si se busca una posición que supere el tamaño del string, devulve cadena vacia.
 
 
 
-//************** concat() = concatenar ****************
+//************** concat() ****************
+
+//Ayuda a concatenar o unir variables, cadenas, etc.
+
 let hello = "Hello, ";
 console.log(hello.concat("Kevin", ". Have a nice day.")); //Salida: Hello, Kevin. Have a nice day.
 
@@ -55,6 +100,8 @@ console.log("".concat(...greetList)); //Salida: "Hello Venkat!"
 
 //************** includes() *************
 
+//Determina si una cadena de texto se encuentra dentro de otra cadena de texto, devolviendo true o false
+
 let frase = "El campeon Max Verstappen vs el 7 veces campeon Lewis Hamilton"
 let piloto = "Max";
 
@@ -64,13 +111,29 @@ console.log(`La palabra ${piloto} ${frase.includes(piloto, 12)} está dentro de 
 
 
 
-//*************** startWhith() ************* */
+//*************** startsWith() ************* */
+
+//Determina si una cadena de texto inicia con los caracteres de una cadena indicada, devolviendo true o false
+
 let fraseFour = "Arriba el futbol de Monterrey"
 console.log(`La primera palabra de la frase es Monterrey? ${fraseFour.startsWith('Arriba') ? 'SI' : 'NO'}`);
 console.log(`La última palabra de la frase es Monterrey? ${fraseFour.startsWith('Arriba', 3) ? 'SI' : 'NO'}`);
 
+//Ejemplo
+let palabraStarsWith = "Tengo frio ahorita mismo. Mañana no creo.";
+let iniciaCon = palabraStarsWith.startsWith("Ten");
+let inciciaCon2 = palabraStarsWith.startsWith("Ten", 1);
+console.log(iniciaCon);
+console.log(inciciaCon2);
+//Toma en cuenta los puntos finales
+let puntoFinal = palabraStarsWith.startsWith("Ma", 26);
+console.log(puntoFinal);
+
+
 
 //*************** endsWhith() ************* */
+
+//Determina si una cadena de texto termina con los caracteres de una cadena indicada, devolviendo true o false
 
 let fraseTwo = "Arriba el futbol de Monterrey"
 console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('Monterrey') ? 'SI' : 'NO'}`); //Determina la última palabra del string
@@ -80,18 +143,23 @@ console.log(`La última palabra de la frase es Monterrey? ${fraseTwo.endsWith('M
 
 //*************** indexOf() y lastIndexOf() ************* */
 
+//indexOf() Encuentra la primera ocurrencia de una subcadena (o carácter) dentro de una cadena. Va de izquierda a derecha.
+
+//lastIndexOf() Encuentra la última ocurrencia de una subcadena (o carácter) dentro de una cadena o la primera ocurrencia llendo de derecha a izquierda.
+
 let cadena = "MasterClassEnds";
 
 console.log(cadena.indexOf("m")); //Salida: -1 (no encontrará la posición de 'm' porque indexOf es sencible a Mayusculas)
 console.log(cadena.indexOf("M")); //Salida: 0
-console.log(cadena.indexOf("a")); //Salida: 1 (indexOf busca el primer caracter de izquierda a derecha)
+console.log(cadena.indexOf("r")); //Salida: 5 (indexOf busca el primer caracter de izquierda a derecha)
 console.log(cadena.lastIndexOf("a")); //Salida: 8 (lasIndexOf busca el primer caracter pero de derecha a izquierda)
 
+//Ejemplo
 let cuenta = 0;
-let posicion = cadena.indexOf("s");
+let posicion = cadena.indexOf("s"); //2
 while (posicion != -1) {
-    cuenta++;
-    posicion = cadena.indexOf("s", posicion + 1);
+    cuenta++;//1,2,3,4
+    posicion = cadena.indexOf("s", posicion + 1); // 9(3), 10(10), 14(11) -1(15)
 }
 console.log(cuenta); //Salida: 4 (En si porque solo existen 4 's' dentro del string entonces la iteración fue de 4)
 console.log(posicion); //Salida: -1 (Cuando ya no encontra más posiciones en el string retorna -1)
@@ -101,6 +169,7 @@ console.log(posicion); //Salida: -1 (Cuando ya no encontra más posiciones en el
 // ********************* localeCompare() *******************
 
 //Sirve para hacer comparaciones entre cadenas de texto dependiento el alfabeto
+
 let palabra1 = "manzana";
 let palabra2 = "banana";
 
@@ -111,6 +180,7 @@ console.log(resultado2); //Salida: 1
 /* Nota: entiendo que la cadena que está antes del localCompare es el dato a comparar, 
 y este manda si el resultado es -1,1 o 0 (Si va antes de lo que está entre parentesis o después) */
 
+//Ejemplo
 let nombres = ["Pedro", "Ana", "Juan"];
 nombres.sort((a, b) => a.localeCompare(b)); //Ocupamos sort para ordenar un arreglo y con localCompare le decimos que lo ordene alfabeticamente.
 console.log(nombres);
@@ -122,6 +192,12 @@ console.log("ä".localeCompare("z", "sv")); // un valor positivo: en sueco, ä s
 
 
 // ************************ Secuencias de escape o Notación de escape ****************************
+
+/*
+Estas notaciones permiten incluir caracteres que de otro modo serían difíciles de escribir o 
+que podrían causar problemas en la interpretación del código. 
+Las notaciones de escape comienzan con una barra invertida (\), seguida de un carácter que indica el tipo de escape. 
+ */
 
 let saludar = "Hola \n Daniel como estás \'Amigo\' \nMi nombre es \\ Gloria \\ \"Cabeza de Bolo\" Jejejej \r y tu? \v tabulacion vertical \t jejjeej \f ijijjiji \ud83d";
 console.log(saludar);
@@ -140,20 +216,8 @@ let bye = "Adios amigo" +
 // ******************** String.fromCharCode() ********************************
 
 // Devuelve una cadena creada de valores Unicode.
+
 console.log(String.fromCharCode(65, 69, 67)); //Salida: AEC
-
-
-
-// ******************** string.raw **************************
-
-//Devuleve cadenas en crudo, sin procesar
-
-let name1 = "Daniel";
-let full = String.raw`Hola\n${name1}\\ como estás \"`;
-/* No procesa secuencias de escape (barras invertidas), no da saltos de linea, 
-ni agrega comillas, todo lo pasa literal. */
-
-console.log(full); //Salida: Hola\nDaniel\\ como estás \"
 
 
 
@@ -175,6 +239,7 @@ console.log(resultMatch2)
 // ***************** padEnd() ****************
 
 //Este metodo rellena un string con el string que nosotros proporciones colocando el index en el maxlenght que deseemos
+
 let phraseEnd = "Esta frase termina con * apartir de aqui ";
 let padExample = phraseEnd.padEnd(55, "*");
 console.log(padExample);
@@ -196,10 +261,12 @@ let phraseStart = "Esta frase empieza con *.";
 console.log(phraseStart.padStart(40, "*"));
 
 
+
 // ***************** repeat() ****************
 
 //Repite un string la cantidad de veces necesarias (Solo numeros enteros)
-console.log("hola".repeat(10));
+
+console.log("hola".repeat(10)); //holaholaholaholaholaholaholaholaholahola
 console.log("hola".repeat(10)); // RangeError
 console.log("abc".repeat(0)); // ''
 
@@ -263,6 +330,7 @@ function addOffset(match, ...args) {
 console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
 
 
+
 // ***************** replaceAll() ****************
 
 //Basicamente hace lo mismo que remplace() pero en lugar de remplazar un solo valor, este remplaza todas las ocurrencias.
@@ -272,7 +340,8 @@ console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
 
 // ***************** search() ****************
 
-//Solo funciona con expreciones regulares, busca una ocurrencia respecto a una expresión regular
+//Busca una ocurrencia respecto a una expresión regular. (Solo funciona con expreciones regulares)
+
 function testinput(re, str) {
     var midstring;
     if (str.search(re) != -1) {
@@ -373,23 +442,12 @@ var strReverse = strt.split("") // Step 1: Split into characters
 console.log(strReverse); // Output: "lkjhgfdsa"
 
 
-// ***************** startsWith() ****************
-
-//Devuelve true or false si una cadena comienza con ciertos caracteres
-let palabraStarsWith = "Tengo frio ahorita mismo. Mañana no creo.";
-let iniciaCon = palabraStarsWith.startsWith("Ten");
-let inciciaCon2 = palabraStarsWith.startsWith("Ten", 1);
-console.log(iniciaCon, inciciaCon2);
-//Toma en cuenta los puntos finales
-let puntoFinal = palabraStarsWith.startsWith("Ma", 26);
-console.log(puntoFinal);
-
-
 
 // ***************** substring() ****************
 
 //Devuleve un subconjunto de cadena apartir de el indice de inicio e indice fin.
 //Si el indice final es mayor al indice inicial, substring lo invierte (el indice menor siempre lo toma como indice a)
+
 var cualquierCadena = "Mozilla";
 
 // Muestra "Moz"
@@ -426,20 +484,26 @@ reemplazarCadena("Mundo", "Web", "Bravo Nuevo Mundo");
 
 
 // ***************** toLowerCase() ****************
+
 //Si una cadena contiene caracteres en mayusculas, este método lo devulve en minusculas
 
 let ejemploLowerUpperCase = "HOLA A TODOS mi nombre es Daniel";
 console.log(ejemploLowerUpperCase.toLowerCase()); //hola a todos mi nombre es daniel
 
 
+
 // ***************** toUpperCase() ****************
+
 //Si una cadena contiene caracteres en minusculas, este método lo devulve en mayusculas
+
 console.log(ejemploLowerUpperCase.toUpperCase());
 
 
 
 // ***************** toString() ****************
+
 // Es utilizado para convertir un objeto a su representación en forma de cadena de texto.
+
 let tex = "Hola"
 console.log(tex.toString); //"Hola"
 let num = 123;
@@ -481,18 +545,21 @@ console.log(jaja);
 
 
 // ***************** trimStart() ****************
+
 //Elimina los espacios que estén solo al inicio de una cadena
 console.log(ejemploTrim.trimStart());
 
 
 
 // ***************** trimEnd() ****************
+
 //Elimina los espacios que estén solo al final de una cadena
 console.log(ejemploTrim.trimEnd());
 
 
 
 // ***************** valueOf() ****************
+
 //Delvuelve el valor primitivo de un objeto string
 
 cadena = new String("Hello world");
@@ -504,6 +571,12 @@ console.log(cadena.toString());
 
 
 // ******************* [Symbol.iterator](); *******************
+
+/* 
+La propiedad [Symbol.iterator] permite definir el comportamiento de iteración de un objeto. 
+Cuando un objeto tiene una propiedad [Symbol.iterator], puede ser utilizado en contextos que esperan un iterable, 
+como en los bucles for...of, el operador de propagación (...), y métodos como Array.from.
+*/
 
 const strg = "The quick red fox jumped over the lazy dog's back.";
 
