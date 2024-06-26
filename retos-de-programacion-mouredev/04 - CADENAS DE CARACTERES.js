@@ -519,7 +519,6 @@ while (!theChar.done && theChar.value !== '') {
 }
 
 //Ejemplo Manual
-
 const strig = "Daniel Martinez";
 const strIter = strig[Symbol.iterator]();
 
@@ -537,40 +536,17 @@ DIFICULTAD EXTRA (opcional):
  * - Isogramas 
  * */
 
-
-/* function palindromo() {
-    let space = " ";
-    let deleteSpace = (fraseNumerOne.split(space))
-    let joinArray = deleteSpace.join('')
-    console.log(joinArray);
-    let lowerString = joinArray.toLowerCase();
-    let nose = Array.from(lowerString)
-    console.log(nose);
-    let noseArray = nose.toReversed();
-    let deleteSpaceDos = noseArray.join('');
-    if (lowerString == deleteSpaceDos) {
-        console.log(`La palabra ${fraseNumerOne} es un palindromo`);
-        } else {
-            console.log(`La palabra ${fraseNumerOne} no es un palindromo, vuelve a intentar!`)
-        
-    }
-    } */
-
 // Palindromos
-let firstWord = "ANITA LAVA LA TINA";
-function palindromo() {
-    let space = " ";
-    let deleteSpace = firstWord.split(space);
-    let joinWord = deleteSpace.join('').toLowerCase();
-    let arrayWord = Array.from(joinWord).toReversed().join('');
-    let result = arrayWord === joinWord ? `${firstWord} es un palindromo` : `${firstWord} no es un palindromo`;
+function palindromo(firstWord) {
+    let deleteSpace = firstWord.toLowerCase().split(' ').join('');
+    let arrayWord = Array.from(deleteSpace).toReversed().join('');
+    let result = arrayWord === deleteSpace ? `${firstWord} es un palindromo` : `${firstWord} no es un palindromo`;
     console.log(result);
 }
-palindromo();
+palindromo("ANITA LAVA LA TINA");
 
 // Anagramas
-let secondWord = "daniel", thirdWord = "DanieL";
-function anagrama() {
+function anagrama(secondWord, thirdWord) {
     let arraySecondWord = secondWord.split('').sort((a, b) => a.localeCompare(b));
     arraySecondWord = arraySecondWord.join('').toLowerCase();
     let arrayThirWord = thirdWord.split('').sort((a, b) => a.localeCompare(b));
@@ -580,20 +556,20 @@ function anagrama() {
         : `La palabras ${secondWord} y ${thirdWord}, no son anagramas`;
     console.log(result);
 }
-anagrama();
+anagrama("Daniel", "DANIEL");
 
 // Isogramas
-let fourthWord = "dasgeny";
-let eje = fourthWord.split('');
-let hi = new Set(eje);
+function isograma(fourthWord) {
+    let arrayIsograma = fourthWord.toLowerCase().split('').join('');
+    let textSet = new Set(arrayIsograma);
 
-const array = [];
-hi.forEach(v => array.push(v));
-let text1 = eje.join('');
-let text2 = array.join('');
-if (text1 === text2) {
-    console.log("Hola Papu");
-} else {
-    console.log("Adios Papu");
+    const array = [];
+    textSet.forEach(v => array.push(v));
+    let emptyArray = array.join('');
+    if (arrayIsograma === emptyArray) {
+        console.log(`${fourthWord} es un Isograma`);
+    } else {
+        console.log(`${fourthWord} no es un Isograma`);
+    }
 }
-
+isograma("Murcielago");
