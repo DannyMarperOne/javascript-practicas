@@ -149,20 +149,37 @@ que tienen num1 y num2. */
 // FUNCION REFERENCIA
 
 /* 
+Cuando pasamos valores compuestos a una función, de la misma forma solo se hace una copia de la dirección en memoria de
+donde se encuentran los valores reales.
 
+Todas las operaciones que se realizan dentro de la función con las variables o parametros que contengan 
+las copias de la dirección de referencia, se veran afectadas dentro y fuera de la función. 
+
+Esto se puede evitar realizando cierta operación para evitar que los objetos modificados dentro de la función
+no afecten a los objetos fuera de esta. Y esto se logra haciendo una copia legitima del objeto en cuestion.
 */
 
+//FUNCION REFERENCIA NORMAL
 let array = ["Daniel", "Gustavo", "Jannet"];
 function reff() {
     let array2 = array;
     array2.push("Rosalí");
     return array2;
 }
-console.log(reff());
-console.log(array);
+console.log(reff()); //[ 'Daniel', 'Gustavo', 'Jannet', 'Rosalí' ]
+console.log(array); //[ 'Daniel', 'Gustavo', 'Jannet', 'Rosalí' ]
 
-
-
+//Ejemplo copia de objeto:
+let arreglo = ["HTML", "CSS", "JAVASCRIPT"];
+function lenguaje(dev) {
+    //Convertimos el objeto en cadena y despues en objeto nuevamente para hacer una copia del objeto completo
+    let nuevaPersona = JSON.parse(JSON.stringify(dev));
+    nuevaPersona.push("PHP");
+    console.log(nuevaPersona);
+    //De esta forma cuando se modifica el nuevo objeto dentro de la función, no afecta al objeto fuera de la misma
+}
+lenguaje(arreglo); //[ 'HTML', 'CSS', 'JAVASCRIPT', 'PHP' ]
+console.log(arreglo);//[ 'HTML', 'CSS', 'JAVASCRIPT'
 
 
 
