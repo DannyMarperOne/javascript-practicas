@@ -182,12 +182,18 @@ lenguaje(arreglo); //[ 'HTML', 'CSS', 'JAVASCRIPT', 'PHP' ]
 console.log(arreglo);//[ 'HTML', 'CSS', 'JAVASCRIPT'
 
 
+/* 
+https://www.escuelafrontend.com/valor-y-referencia-en-javascript
 
+https://www.youtube.com/watch?v=AvkyOrWkuQc
 
+https://www.linkedin.com/pulse/valores-vs-referencias-en-javascript-fede-mazza/
 
+https://es.javascript.info/object-copy
 
+https://medium.com/@lupomontero/por-valor-vs-por-referencia-en-javascript-de3daf53a8b9
 
-
+ */
 
 
 
