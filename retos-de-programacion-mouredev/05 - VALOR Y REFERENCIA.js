@@ -188,8 +188,6 @@ console.log(persona1); // -> ?
 console.log(persona2); // -> ?
 
 
-
-
 //Ejemplo copia de objeto:
 let arreglo = ["HTML", "CSS", "JAVASCRIPT"];
 function lenguaje(dev) {
@@ -202,30 +200,67 @@ function lenguaje(dev) {
 lenguaje(arreglo); //[ 'HTML', 'CSS', 'JAVASCRIPT', 'PHP' ]
 console.log(arreglo);//[ 'HTML', 'CSS', 'JAVASCRIPT'
 
-
 /* 
-https://www.escuelafrontend.com/valor-y-referencia-en-javascript
-
-https://www.youtube.com/watch?v=AvkyOrWkuQc
-
-https://www.linkedin.com/pulse/valores-vs-referencias-en-javascript-fede-mazza/
-
-https://es.javascript.info/object-copy
-
-https://medium.com/@lupomontero/por-valor-vs-por-referencia-en-javascript-de3daf53a8b9
-
- */
-
-
-
-/* DIFICULTAD EXTRA (opcional):
+ * DIFICULTAD EXTRA (opcional):
  * Crea dos programas que reciban dos parámetros (cada uno) definidos como variables anteriormente.
  * - Cada programa recibe, en un caso, dos parámetros por valor, y en otro caso, por referencia.
- *   Estos parámetros los intercambia entre ellos en su interior, los retorna, y su retorno
+ *   
+ * 
+ * Estos parámetros los intercambia entre ellos en su interior, los retorna, y su retorno
  *   se asigna a dos variables diferentes a las originales. A continuación, imprime el valor de las
  *   variables originales y las nuevas, comprobando que se ha invertido su valor en las segundas.
  *   Comprueba también que se ha conservado el valor original en las primeras.
  */
+
+let nombre = "Daniel";
+let apellido = "Martínez";
+
+function progValor(nombre, apellido) {
+    let extra = nombre
+    nombre = apellido
+    apellido = extra
+    return nombre + " " + apellido;
+}
+console.log(progValor(nombre, apellido));
+console.log(nombre, apellido);
+
+/* 
+NOTA: El concepto de paso por referencia en JavaScript es consistente tanto dentro como fuera de las funciones. 
+Siempre se manejan referencias a objetos, no copias de los objetos en sí. Las asignaciones dentro de una 
+función solo afectan a las variables locales a menos que se modifiquen directamente los objetos referenciados 
+(como agregar elementos a un array, por ejemplo).
+*/
+
+
+let listaNombre = ["Jim", "Pam", "Dwigth"];
+let listName = ["Manuel", "Fidencio", "Jose"];
+
+function progReferencia(listaNombre, listaName) {
+    let extra = listaNombre;
+    listaNombre = listName;
+    listaName = extra;
+    return [listaNombre, listaName];
+}
+console.log(progReferencia(listaNombre, listName));
+console.log(listaNombre, listName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
