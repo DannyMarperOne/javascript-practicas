@@ -35,8 +35,8 @@ se cambie el valor de la variable "a" por z, el valor de la variable "b" seguir�
 //POR VALOR
 let var1 = "México";
 let var2 = "España";
-console.log(var1);
-console.log(var2);
+console.log(var1); // México
+console.log(var2); // España
 
 let var3 = var1; //var3 ahora se le asignó una "copia" del valor de la var1 entonces var3 = "México"
 
@@ -133,13 +133,13 @@ no afecta en nada los valores que se encuentran fuera de la función.
 let num1 = 50, num2 = 34;
 
 function sumar(x, y) {
-    console.log("Suma de los parametros antes de cambiar su valor dentro de la función " + (x + y));
+    console.log("Suma de los parametros antes de cambiar su valor dentro de la función " + (x + y)); //84
     x = 20;
     y = 30;
     return x + y;
 }
-console.log(`Suma de los parametros dentro de la función ${sumar(num1, num2)}`);
-console.log(`Suma de variable fuera de la función ${num1 + num2}`);
+console.log(`Suma de los parametros dentro de la función ${sumar(num1, num2)}`); //50
+console.log(`Suma de variable fuera de la función ${num1 + num2}`); //84
 
 /* Como se ve en el ejemplo, la variables fuera de la función no se ven afectadas ya que x & y hacen una copia de los valores
 que tienen num1 y num2. */
@@ -169,6 +169,27 @@ function reff() {
 console.log(reff()); //[ 'Daniel', 'Gustavo', 'Jannet', 'Rosalí' ]
 console.log(array); //[ 'Daniel', 'Gustavo', 'Jannet', 'Rosalí' ]
 
+
+//Ejemplo por referencia
+function cambiaLaEdadYLaReferencia(persona) {
+    persona.edad = 25;
+    persona = {
+        nombre: 'John',
+        edad: 50
+    };
+    return persona;
+}
+let persona1 = {
+    nombre: 'Claudia',
+    edad: 31
+};
+let persona2 = cambiaLaEdadYLaReferencia(persona1);
+console.log(persona1); // -> ?  
+console.log(persona2); // -> ?
+
+
+
+
 //Ejemplo copia de objeto:
 let arreglo = ["HTML", "CSS", "JAVASCRIPT"];
 function lenguaje(dev) {
@@ -197,26 +218,16 @@ https://medium.com/@lupomontero/por-valor-vs-por-referencia-en-javascript-de3daf
 
 
 
+/* DIFICULTAD EXTRA (opcional):
+ * Crea dos programas que reciban dos parámetros (cada uno) definidos como variables anteriormente.
+ * - Cada programa recibe, en un caso, dos parámetros por valor, y en otro caso, por referencia.
+ *   Estos parámetros los intercambia entre ellos en su interior, los retorna, y su retorno
+ *   se asigna a dos variables diferentes a las originales. A continuación, imprime el valor de las
+ *   variables originales y las nuevas, comprobando que se ha invertido su valor en las segundas.
+ *   Comprueba también que se ha conservado el valor original en las primeras.
+ */
 
 
 
 
 
-
-
-
-function cambiaLaEdadYLaReferencia(persona) {
-    persona.edad = 25;
-    persona = {
-        nombre: 'John',
-        edad: 50
-    };
-    return persona;
-}
-let persona1 = {
-    nombre: 'Claudia',
-    edad: 31
-};
-let persona2 = cambiaLaEdadYLaReferencia(persona1);
-console.log(persona1); // -> ?  
-console.log(persona2); // -> ?
