@@ -25,11 +25,13 @@ Ejercicio */
 /* 
 Esto aplica con tipos de datos primitivos: String, Number, Null, Boolean, Undefined (Revisar: BigInt y Symbol)
 
-Este tipo de asignación basicamente cuando se crea una variable "a" y se le asigna valor x y se crea una variable "b" y se le
-asigna el la variable "a", practicamente se está haciendo una copia de la variable "a", para asignarsela a "b".
+Este tipo de asignación basicamente cuando se crea una variable "a" y se le asigna valor x, depués se crea una 
+variable "b" y se le asigna la variable "a", practicamente se está haciendo una copia de la variable "a", 
+para asignarsela a "b".
 
-La variable "a" está en un espacio de memoria y la variable "b" está en otro espacio de memoria, por ello es que aunque después 
-se cambie el valor de la variable "a" por z, el valor de la variable "b" seguirá siendo el mismo que ya tenia asignado (x). 
+La variable "a" está en un espacio de memoria y la variable "b" está en otro espacio de memoria, por ello es que aunque 
+después se cambie el valor de la variable "a" por z, el valor que está en la variable "b" seguirá siendo el mismo que ya 
+tenia asignado una copia (x). 
 */
 
 //POR VALOR
@@ -55,8 +57,10 @@ console.log(var1); //var1 sigue valiendo "México".
 /* 
 Esto aplica con tipos de datos compuestos: Object (Objects, Functions, Arrays, Set, Etc...)
 
-Basicamente cuando se crea un objeto con ciertos valores como nombre: Daniel y edad: 27 y se asigna a una variable
-por ejemplo obj1, como tal obj1 no tiene asignados lo valores nombre y edad, lo que tienen asignado literalmente es la
+Basicamente cuando se crea un arreglo o un objeto con ciertos valores como nombre: Daniel y edad: 27 y se asigna a 
+una variable.
+
+Por ejemplo obj1, como tal obj1 no tiene asignados lo valores nombre y edad, lo que tienen asignado literalmente es la
 dirección en memoria donde se encuentran esos datos.
 Ahora si se crea otra variable como obj2, a la cual se le asigna la variable obj1 (let obj2 = obj1), entonces en este caso 
 no se hace una copia de los valores dentro del objeto, se hace una copia de la dirección en memoria donde se encuentran
